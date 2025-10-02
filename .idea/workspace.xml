@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8a3dc13d-73a7-4725-b0ba-e774ed3fc66a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/about.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/authorization/create-example.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/authorization/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/installation/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/installation/install-windows.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/installation/intall-linux.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/installation/intall-source.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/modules/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/modules/module-create-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/modules/module-create-frontend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/modules/module-create.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/integrations-azuriom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/integrations-external.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/integrations-telegram.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/integrations-unicore.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/news/integrations-vk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/profile-install.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/profiles-create.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/white-lists/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/white-lists/white-list-files.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/white-lists/white-list-folders.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/profiles/white-lists/white-list-players.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/security/base.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/backend/security/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/gml-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/gml-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/code.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/_category_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/about.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/authorization/create-example.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/authorization/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/installation/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/installation/install-windows.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/installation/intall-linux.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/installation/intall-source.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/modules/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/modules/module-create-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/modules/module-create-frontend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/modules/module-create.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/integrations-azuriom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/integrations-external.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/integrations-telegram.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/integrations-unicore.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/news/integrations-vk.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/profile-install.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/profiles-create.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/white-lists/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/white-lists/white-list-files.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/white-lists/white-list-folders.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/profiles/white-lists/white-list-players.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/security/base.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/security/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/gml-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/gml-backend.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/welcome.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomepageFeatures/HeroSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-azuriom-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-vk-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-vk-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-vk-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-vk-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/gml-integrations-news-vk-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/integrations-auth-custom-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo.svg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="33W1KsDCXBUX4jb10eff2CeouUI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/Projects/WebstormProjects/RecloudPublicWiki/docs/gml-launcher/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "D:\\Programs\\JetBrains\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\backend" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\i18n\ru\docusaurus-plugin-content-docs\current\gml-launcher\backend" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\backend\modules" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\static\img" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\backend\news" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\static\img" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\i18n\ru\docusaurus-plugin-content-docs\current\gml-launcher\backend" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\backend" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\i18n\ru\docusaurus-plugin-content-docs\current" />
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-WS-252.26199.162" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a3dc13d-73a7-4725-b0ba-e774ed3fc66a" name="Changes" comment="" />
+      <created>1759417953826</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759417953826</updated>
+      <workItem from="1759417955052" duration="12329000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
