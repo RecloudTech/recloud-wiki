@@ -8,6 +8,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import HeroSection from "../components/HomepageFeatures/HeroSection";
 import Translate, {translate} from "@docusaurus/Translate";
+import HelloBar from "../components/homepage/HelloBar";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -39,6 +40,7 @@ export default function Home() {
     <Layout
       title={siteConfig.title}
       description="Description will go into a meta tag in <head />">
+        <HelloBar />
       <HomepageHeader />
       <main>
         {/*<HomepageFeatures />*/}

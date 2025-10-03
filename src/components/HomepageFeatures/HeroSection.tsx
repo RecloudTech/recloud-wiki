@@ -1,3 +1,4 @@
+// @ts-ignore
 import Link from "@docusaurus/Link";
 
 export default function HeroSection() {

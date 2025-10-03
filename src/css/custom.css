@@ -4,6 +4,10 @@
  * work well for content-centric websites.
  */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can override the default Infima variables here. */
 :root {
     --ifm-color-primary: #3C83F6;
@@ -21,6 +25,7 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
     --ifm-background-color: #09090B;
+    --ifm-footer-background-color: #09090B;
     --ifm-background-surface-color: #09090B;
     --ifm-hover-overlay: #3c83f633;
     --ifm-color-primary: #3C83F6;

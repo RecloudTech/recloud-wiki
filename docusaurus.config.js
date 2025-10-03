@@ -73,6 +73,10 @@ const config = {
             }),
         ],
     ],
+    
+    plugins: [
+        require('./plugins/tailwind-plugin.cjs'),  
+    ],
 
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

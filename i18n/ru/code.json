@@ -1,4 +1,8 @@
 {
+  "theme.recloud-year.title": {
+    "message": "Нашей компании 1 год!",
+    "description": "Title for the anniversary page"
+  },
   "theme.NotFound.title": {
     "message": "Страница не найдена",
     "description": "The title of the 404 page"
