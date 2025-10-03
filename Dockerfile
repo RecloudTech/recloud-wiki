@@ -27,6 +27,10 @@ COPY --from=builder /app/node_modules /app/node_modules
 # Docusaurus serve needs access to the site config (and its sidebar file referenced from config)
 COPY --from=builder /app/docusaurus.config.js ./docusaurus.config.js
 COPY --from=builder /app/sidebars.js ./sidebars.js
+# Also copy custom plugins required by docusaurus.config.js (e.g., Tailwind PostCSS plugin)
+COPY --from=builder /app/plugins ./plugins
+# Optionally copy Tailwind config if needed at runtime
+COPY --from=builder /app/tailwind.config.cjs ./tailwind.config.cjs
 
 # Docusaurus serve listens on provided port
 EXPOSE 3031
