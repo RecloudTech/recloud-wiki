@@ -32,9 +32,9 @@ import GmlFaq14 from '/img/gml-faq-14.png';
 - Ошибка: Ошибка сервиса авторизации. Обратитесь к администратору платформы
 - Если прописать ```docker ps -a``` на вашем сервере - вы видите упавший контейнер Gml.Web.Api
 - У вас недоступен сервис на 5000 порту, например:
-    - http://localhost:5000
-    - http://192.168.31.200:5000
-    - IP_SERVER:5000
+    - http://localhost:5003
+    - http://192.168.31.200:5003
+    - IP_SERVER:5003
 
 ### Варианты решения
 
@@ -45,7 +45,7 @@ import GmlFaq14 from '/img/gml-faq-14.png';
   следующим образом
     ```
     # Адрес к Web Api
-    NEXT_PUBLIC_BACKEND_URL=http://localhost:5000/api/v1
+    NEXT_PUBLIC_BACKEND_URL=http://localhost:5003/api/v1
     NEXT_PUBLIC_MARKETPLACE_URL=https://gml-market.recloud.tech
     ```
   > Внимание! Не должно быть ```/``` в конце адреса и выбран верный протокол ```http``` или ```https```

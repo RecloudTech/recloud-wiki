@@ -4,44 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a3dc13d-73a7-4725-b0ba-e774ed3fc66a" name="Changes" comment="Add FAQ documentation for GML Launcher">
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/build/from-panel/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/build/from-panel/load-files.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/build/from-panel/start-build.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/build/from-source.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/build/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/design/colors.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/design/components.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/design/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/publish/from-panel.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/publish/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/publish/linux.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/publish/macos.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/build/from-panel/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/build/from-panel/load-files.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/build/from-panel/start-build.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/build/from-source.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/build/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/design/colors.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/design/components.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/design/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/publish/from-panel.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/publish/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/publish/linux.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/publish/macos.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/avalonia-plugin-vs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/avalonia-vs-extension-nuget.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/launcher-panel-build-publish-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/launcher-panel-build-publish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/publish-rider-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/publish-rider-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/publish-visual-studio-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/publish-visual-studio-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/publish-visual-studio-3.png" afterDir="false" />
+    <list default="true" id="8a3dc13d-73a7-4725-b0ba-e774ed3fc66a" name="Changes" comment="Add Russian localization and structure for GML Launcher docs">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/connect/docker.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/connect/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/connect/linux.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/connect/pterodactyl.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/prepare.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/connect/docker.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/connect/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/connect/linux.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/connect/pterodactyl.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gml-launcher/launcher/gml-backend.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gml-launcher/launcher/envirement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/gml-backend.md" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/envirement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/launcher/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/gml-launcher/faq/faq.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gml-launcher/faq/faq.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/gml-launcher/faq/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gml-launcher/faq/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/gml-backend.md" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/prepare.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gml-launcher/server-minecraft/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/authorization/create-example.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/backend/authorization/create-example.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/faq/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/faq/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/gml-backend.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/ru/docusaurus-plugin-content-docs/current/gml-launcher/server-minecraft/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +52,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/Projects/WebstormProjects/RecloudPublicWiki/static/img",
+    "last_opened_file_path": "D:/Projects/WebstormProjects/RecloudPublicWiki/docs/gml-launcher/server-minecraft",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,11 +67,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\server-minecraft" />
       <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\static\img" />
       <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\launcher\publish" />
       <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\i18n\ru\docusaurus-plugin-content-docs\current\gml-launcher\launcher\publish" />
       <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\launcher\build" />
-      <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\docs\gml-launcher\launcher\design" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\WebstormProjects\RecloudPublicWiki\static\img" />
@@ -130,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759417953826</updated>
-      <workItem from="1759417955052" duration="16051000" />
+      <workItem from="1759417955052" duration="16586000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -148,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759465839888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Russian localization and structure for GML Launcher docs">
+      <option name="closed" value="true" />
+      <created>1759467771594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759467771594</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +147,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Add FAQ documentation for GML Launcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FAQ documentation for GML Launcher" />
+    <MESSAGE value="Add Russian localization and structure for GML Launcher docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Russian localization and structure for GML Launcher docs" />
   </component>
 </project>
