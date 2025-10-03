@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Recloud', // Usually your GitHub org/user name.
-  projectName: 'RecloudPublicWiki', // Usually your repo name.
+  organizationName: 'RecloudTech', // Usually your GitHub org/user name.
+  projectName: 'recloud-wiki', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
