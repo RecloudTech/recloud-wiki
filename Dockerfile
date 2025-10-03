@@ -24,6 +24,9 @@ RUN npm ci --omit=dev
 # Copy built static site and necessary files for docusaurus serve
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules /app/node_modules
+# Docusaurus serve needs access to the site config (and its sidebar file referenced from config)
+COPY --from=builder /app/docusaurus.config.js ./docusaurus.config.js
+COPY --from=builder /app/sidebars.js ./sidebars.js
 
 # Docusaurus serve listens on provided port
 EXPOSE 3031
