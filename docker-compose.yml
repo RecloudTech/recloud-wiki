@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  wiki:
+    container_name: recloud-wiki
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3031:3031"
+    restart: unless-stopped
+    networks:
+      - recloud-network
+
+networks:
+  recloud-network:
+    external: true
