@@ -7,6 +7,10 @@
     "message": "Официальная Wiki Recloud!",
     "description": "Title for the anniversary page"
   },
+  "theme.recloud.hero.our-site": {
+    "message": "Наш сайт",
+    "description": "Our site link"
+  },
   "theme.NotFound.title": {
     "message": "Страница не найдена",
     "description": "The title of the 404 page"
