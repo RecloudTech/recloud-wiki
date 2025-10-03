@@ -1,39 +1,45 @@
-# Multi-stage Dockerfile for Docusaurus wiki
-# Build stage
-FROM node:20-alpine AS builder
+# syntax=docker/dockerfile:1
 
-WORKDIR /app
+# Stage 1: Base image.
+## Start with a base image containing NodeJS so we can build Docusaurus.
+FROM node:lts AS base
+## Disable colour output from yarn to make logs easier to read.
+ENV FORCE_COLOR=0
+## Enable corepack.
+RUN corepack enable
+## Set the working directory to `/opt/docusaurus`.
+WORKDIR /opt/docusaurus
 
-# Install dependencies first (better layer caching)
-COPY package*.json ./
+# Stage 2a: Development mode.
+FROM base AS dev
+## Set the working directory to `/opt/docusaurus`.
+WORKDIR /opt/docusaurus
+## Expose the port that Docusaurus will run on.
+EXPOSE 3000
+## Run the development server.
+CMD [ -d "node_modules" ] && npm run start -- --host 0.0.0.0 --poll 1000 || npm install && npm run start -- --host 0.0.0.0 --poll 1000
+
+# Stage 2b: Production build mode.
+FROM base AS prod
+## Set the working directory to `/opt/docusaurus`.
+WORKDIR /opt/docusaurus
+## Copy over the source code.
+COPY . /opt/docusaurus/
+## Install dependencies with `--immutable` to ensure reproducibility.
 RUN npm ci
-
-# Copy the rest of the source and build the site
-COPY . .
+## Build the static site.
 RUN npm run build
 
-# Runtime stage
-FROM node:20-alpine AS runner
-
-WORKDIR /app
-
-# Only copy the pieces we need to serve the built site
-COPY package*.json ./
-RUN npm ci --omit=dev
-
-# Copy built static site and necessary files for docusaurus serve
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/node_modules /app/node_modules
-# Docusaurus serve needs access to the site config (and its sidebar file referenced from config)
-COPY --from=builder /app/docusaurus.config.js ./docusaurus.config.js
-COPY --from=builder /app/sidebars.js ./sidebars.js
-# Also copy custom plugins required by docusaurus.config.js (e.g., Tailwind PostCSS plugin)
-COPY --from=builder /app/plugins ./plugins
-# Optionally copy Tailwind config if needed at runtime
-COPY --from=builder /app/tailwind.config.cjs ./tailwind.config.cjs
-
-# Docusaurus serve listens on provided port
+# Stage 3a: Serve with `docusaurus serve`.
+FROM prod AS serve
+## Expose the port that Docusaurus will run on.
 EXPOSE 3031
+## Run the production server.
+CMD ["npm", "run", "serve", "--", "--host", "0.0.0.0", "--no-open"]
 
-# Use docusaurus built-in static server
-CMD ["npm", "run", "serve", "--", "--host", "0.0.0.0", "--port", "3031"]
+# Stage 3b: Serve with Caddy.
+FROM caddy:2-alpine AS caddy
+## Copy the Caddyfile.
+COPY --from=prod /opt/docusaurus/Caddyfile /etc/caddy/Caddyfile
+## Copy the Docusaurus build output.
+COPY --from=prod /opt/docusaurus/build /var/docusaurus

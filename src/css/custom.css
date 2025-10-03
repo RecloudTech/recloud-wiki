@@ -40,14 +40,13 @@
     }
 
 
-
     a {
         @apply cursor-pointer;
         font-family: "Open-Sans", sans-serif;
     }
 
     p {
-        font-size: 1rem!important;
+        font-size: 1rem !important;
     }
 
     h1 {
@@ -153,7 +152,7 @@ body {
     --docs-color-code-background: #1e1e1e;
 
     --navbar-second-row-background: #1a202c; /* Very dark blue-gray */
-    --navbar-second-row-border: #2d3748;     /* Medium gray */
+    --navbar-second-row-border: #2d3748; /* Medium gray */
 
     --ifm-background-color: var(--docs-color-background);
     --ifm-background-surface-color: var(--docs-color-background);
@@ -228,6 +227,10 @@ html[data-theme='dark'] {
     --ifm-color-content: #e7e7e7;
 
     --docusaurus-highlighted-code-line-bg: rgba(105, 105, 105, 0.3);
+}
+
+.footer--dark {
+    --ifm-footer-background-color: #09090B;
 }
 
 nav.navbar {
@@ -893,6 +896,7 @@ img[src$='#terminal'] {
 .has-sub-sections > .section-content {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+
 .has-sub-sections > .section-content > .homepage-section {
     margin-bottom: 1rem;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1024,6 +1028,7 @@ details p {
     .section-content {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+
     .two-cols .section-content {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -1038,10 +1043,12 @@ details p {
 > summary::before {
     border-color: transparent transparent transparent var(--docs-color-text-100) !important;
 }
+
 @media only screen and (min-width: 768px) {
     img[alt='PresetEditor'] {
         max-width: 600px;
     }
+
     img[alt='APIKeys'] {
         max-width: 600px;
     }
@@ -1219,6 +1226,7 @@ html[data-theme='dark'] .video_sidebar_header > div > a::before {
     @apply mt-1 mr-2;
     content: url('data:image/svg+xml,<svg fill="currentColor" class="sidebar-icon-header ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-hidden="true" width="1em" height="1em" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 4A2.5 2.5 0 0 0 2 6.5v7A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5v-1l2.4 1.8a1 1 0 0 0 1.6-.8v-7a1 1 0 0 0-1.6-.8L14 7.5v-1A2.5 2.5 0 0 0 11.5 4h-7ZM14 8.75l3-2.25v7l-3-2.25v-2.5ZM13 6.5v7c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 0 1 3 13.5v-7C3 5.67 3.67 5 4.5 5h7c.83 0 1.5.67 1.5 1.5Z" fill="white"></path></svg>');
 }
+
 .guides-top-header {
     @apply ml-6 mr-2 rounded-md border-secondary-700;
     border-width: 1px;
@@ -1258,11 +1266,11 @@ html[data-theme='dark'] .video_sidebar_header > div > a::before {
 }
 
 .center {
-    min-height: unset!important;
+    min-height: unset !important;
 }
 
 .pagination-nav__link--next {
-    background-color: rgba(68, 110, 172, 0.1)!important;
+    background-color: rgba(68, 110, 172, 0.1) !important;
     color: #0d6efd;
     border-color: #0d6efd;
     font-family: "Open Sans", sans-serif;
@@ -1287,8 +1295,7 @@ img.center {
     padding-bottom: 1rem !important;
 }
 
-.dropdown__menu
-{
+.dropdown__menu {
     min-width: 20rem;
 }
 
@@ -1300,7 +1307,7 @@ img.center {
 #__docusaurus > nav > div.navbar__inner > div:nth-child(1) > a.navbar__brand > b {
     color: #0d6efd;
     font-family: "Open Sans", sans-serif;
-    font-weight: 800; 
+    font-weight: 800;
 }
 
 .wavesCard {
@@ -1405,6 +1412,7 @@ img.center {
     width: 28px;
     height: auto;
 }
+
 .ph_banner_txt {
     color: #fff;
     font-family: "Open Sans", sans-serif;
