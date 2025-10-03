@@ -1,0 +1,23 @@
+# Caddy v2 config for serving a Docusaurus production build
+# Listens on port 3031 to match docker-compose port mapping
+:3031 {
+  # Serve the built static site copied to this path in the image
+  root * /var/docusaurus
+
+  # Compress responses
+  encode zstd gzip
+
+  # SPA-style routing: if the file/dir doesn't exist, fall back to index.html
+  try_files {path} {path}/ /index.html
+
+  # Static file server
+  file_server
+
+  # Optional security headers (harmless if served over HTTP only)
+  header {
+    Referrer-Policy "no-referrer-when-downgrade"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    X-XSS-Protection "0"
+  }
+}
