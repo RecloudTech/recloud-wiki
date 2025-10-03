@@ -9,6 +9,7 @@ import styles from './index.module.css';
 import HeroSection from "../components/HomepageFeatures/HeroSection";
 import Translate, {translate} from "@docusaurus/Translate";
 import HelloBar from "../components/homepage/HelloBar";
+import CtaSection from "../components/homepage/CtaSection";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -43,6 +44,7 @@ export default function Home() {
         <HelloBar />
       {/*<HomepageHeader />*/}
       <HeroSection />
+      <CtaSection />
       <main>
         {/*<HomepageFeatures />*/}
       </main>
