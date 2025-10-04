@@ -3,8 +3,9 @@ function tailwindPlugin(context, options) {
         name: 'tailwind-plugin',
         configurePostCss(postcssOptions) {
             postcssOptions.plugins = [
-                require('tailwindcss'),
                 require('postcss-import'),
+                ...(postcssOptions.plugins || []),
+                require('tailwindcss'),
                 require('autoprefixer'),
             ];
             return postcssOptions;

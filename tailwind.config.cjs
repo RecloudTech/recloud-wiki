@@ -7,7 +7,18 @@ module.exports = {
     container: false,
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  content: ['./src/**/*.{jsx,tsx,html}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx,md,mdx,html}',
+    './docs/**/*.{md,mdx}',
+    './blog/**/*.{md,mdx}',
+        './i18n/**/*.{md,mdx}',
+  ],
+  safelist: [
+    // Keep arbitrary color utilities that reference Docusaurus/Infima CSS variables.
+    { pattern: /(bg|text|border|fill|stroke|ring|outline)-\[(?:var\(--ifm-[^)]*\))\]/ },
+    // Also keep opacity-modified forms like text-[var(--ifm-...)]\/\d+
+    { pattern: /(bg|text|border|fill|stroke|ring|outline)-\[(?:var\(--ifm-[^)]*\))\]\/\d{1,3}/ },
+  ],
   theme: {
     extend: {
       fontFamily: {
