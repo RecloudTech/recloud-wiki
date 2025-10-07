@@ -84,6 +84,9 @@ const config = {
         ({
             // Replace with your project's social card
             image: 'img/social-card.jpg',
+            metadata: [
+                {name: 'algolia-site-verification', content: 'EA352DD1D733DBF8'},
+              ],
             colorMode: {
                 respectPrefersColorScheme: true,
             },
