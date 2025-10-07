@@ -211,7 +211,8 @@ html[data-theme='dark'] {
     --ifm-color-primary: #0d6efd;
 
     --ifm-brand-logo-color: white;
-    --docs-card-background: #1b2a4e;
+    --docs-card-background: rgba(255, 255, 255, .05);
+    --docs-card-background-hover: rgba(255, 255, 255, .1);
 
     --ifm-footer-background-color: #1c1c1c;
     --ifm-footer-brand-color: white;
@@ -938,6 +939,9 @@ img[src$='#terminal'] {
     position: relative;
     overflow: hidden;
 }
+.homepage-card:hover {
+    background-color: var(--docs-card-background-hover) !important;
+}
 
 .github-sample-card {
     align-items: flex-start;
@@ -1305,7 +1309,8 @@ img.center {
 
 #__docusaurus > nav > div.navbar__inner > div:nth-child(1) > a.navbar__brand > b {
     color: #0d6efd;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
     font-weight: 800;
 }
 
@@ -1338,12 +1343,13 @@ img.center {
 }
 
 .navbar__logo {
-    height: 1.5rem !important;
-    width: 1.5rem !important;
+    height: 2rem !important;
+    width: 2rem !important;
     margin-right: 1px;
     margin-left: 8px;
     padding-bottom: 4px;
 }
+
 
 
 .community-bg {
