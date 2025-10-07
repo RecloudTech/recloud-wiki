@@ -7,6 +7,10 @@
     "message": "Official Wiki Recloud!",
     "description": "Title for the anniversary page"
   },
+  "theme.recloud.hero.description": {
+    "message": "We create reliable digital solutions for businesses — from internal automation to high-load systems. Simplifying complexity, implementing resilience.",
+    "description": "Title for the anniversary page"
+  },  
   "theme.recloud.hero.our-site": {
     "message": "Our site!",
     "description": "Our site link"
