@@ -85,7 +85,7 @@ const config = {
             // Replace with your project's social card
             image: 'img/social-card.jpg',
             metadata: [
-                {name: 'algolia-site-verification', content: 'EA352DD1D733DBF8'},
+
               ],
             colorMode: {
                 respectPrefersColorScheme: true,
@@ -175,7 +175,7 @@ const config = {
                 // Public API key: it is safe to commit it
                 apiKey: '17719a3ff51cc02615c9aead41cf0b87',
 
-                indexName: 'recloud_wiki',
+                indexName: 'Recloud Wiki',
 
                 // Optional: see doc section below
                 contextualSearch: true,
