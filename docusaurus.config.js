@@ -167,10 +167,10 @@ const config = {
             },
             algolia: {
                 // The application ID provided by Algolia
-                appId: 'U211V85DRF',
+                appId: 'HASL3AEWQH',
 
                 // Public API key: it is safe to commit it
-                apiKey: '8c0f15a38542907d0b966fb70453baab',
+                apiKey: '17719a3ff51cc02615c9aead41cf0b87',
 
                 indexName: 'recloud_wiki',
 
