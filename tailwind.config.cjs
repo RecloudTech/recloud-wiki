@@ -23,7 +23,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Open-Sans"', ...fontFamily.sans],
-        jakarta: ['"Outfit"', ...fontFamily.sans],
+        jakarta: ['"Manrope"', ...fontFamily.sans],
         mono: ['"Fira Code"', ...fontFamily.mono],
       },
       borderRadius: {

@@ -4,7 +4,7 @@ import Translate from "@docusaurus/Translate";
 
 export default function HeroSection() {
     return (
-        <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
+        <section className="w-full py-20 md:py-24 lg:py-30 overflow-hidden">
             <div className="container px-4 md:px-6 relative">
 
                 <div className="text-center max-w-3xl mx-auto mb-12 animate-in">
@@ -12,7 +12,7 @@ export default function HeroSection() {
                         className="mt-8 mb-4 inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">
                         wiki
                     </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-6">
                         <Translate
                             id="theme.recloud.hero.title">
                         </Translate>
