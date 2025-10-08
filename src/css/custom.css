@@ -930,7 +930,7 @@ img[src$='#terminal'] {
     padding: 0.75rem;
     text-decoration: none;
     color: var(--docs-color-text);
-    background-color: var(--docs-card-background) !important;
+    background-color: var(--docs-color-background) !important;
     --ifm-link-hover-decoration: none;
     --ifm-link-hover-color: inherit;
     cursor: pointer;
@@ -944,7 +944,7 @@ img[src$='#terminal'] {
     overflow: hidden;
 }
 .homepage-card:hover {
-    background-color: var(--docs-card-background-hover) !important;
+    background-color: var(--navbar-second-row-background) !important;
 }
 
 .github-sample-card {

@@ -26,7 +26,7 @@ export const DocsCard = ({ label, link, height = 40, width = 40, title }) => {
     }
 
     return (
-        <Link to={link} className="homepage-card">
+        <Link to={link} className="homepage-card bg-darkblue">
         <div className="card-content">
           <div className="py-5 px-3 font-jakarta text-2xl">
             {label}
