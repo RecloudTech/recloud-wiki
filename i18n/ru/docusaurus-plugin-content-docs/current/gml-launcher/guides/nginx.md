@@ -8,7 +8,8 @@ sidebar_position: 1
 
 Создайте конфигурационный файл Nginx для домена **gmlf.ВашСайт**.
 
-```nginx
+
+```
 server {
     listen 80;
     server_name gmlf.ВашСайт;
@@ -88,7 +89,9 @@ certbot certonly --nginx -d gmlf.ВашСайт
 
 ## 4. Настройка Cloudflare (при использовании)
 
-> ⚠️ **Важно:** данный раздел применим **только** при использовании Cloudflare.
+:::info
+ ⚠️ данный раздел применим **только** при использовании Cloudflare.
+:::
 
 Если домен обслуживается через Cloudflare:
 
@@ -97,7 +100,10 @@ certbot certonly --nginx -d gmlf.ВашСайт
 3. Нажмите **Configure → Custom SSL/TLS**.
 4. Установите режим **FULL**.
 
-> Режим **FULL** требует наличия действительного сертификата Let's Encrypt на сервере (VDS).
+:::info
+Режим **FULL** требует наличия действительного сертификата Let's Encrypt на сервере (VDS).
+:::
+
 
 ---
 
