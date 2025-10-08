@@ -10,7 +10,7 @@ const QuickLinkCard = ({
   return (
     <Link
   to={href}
-  className="block p-6 bg-white dark:bg-white/5 rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:no-underline transition-all duration-200 border border-[#EDF2F9] dark:border-gray-600 no-underline"
+  className="block p-6 bg-white dark:dark:bg-darkblue rounded-lg shadow-sm hover:shadow-md hover:scale-105 hover:no-underline transition-all duration-200 border border-[#EDF2F9] dark:border-gray-600 no-underline"
   style={{
     borderWidth: '1px',
     borderRadius: '8px'

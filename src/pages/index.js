@@ -11,6 +11,9 @@ import Translate, {translate} from "@docusaurus/Translate";
 import HelloBar from "../components/homepage/HelloBar";
 import CtaSection from "../components/homepage/CtaSection";
 import HeroQuickLinks from "../components/homepage/HeroQuickLinks";
+import CommunitySection from "../components/homepage/CommunitySection";
+import HelpSection from "../components/homepage/HelpSection";
+import GuidesAndSamples from "../components/homepage/GuidesAndSamples";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -46,7 +49,12 @@ export default function Home() {
       {/*<HomepageHeader />*/}
       <HeroSection />
       <HeroQuickLinks />
+      <GuidesAndSamples />
+      <HelpSection />
+      <CommunitySection />
+      {/*
       <CtaSection />
+      */}
       <main>
         {/*<HomepageFeatures />*/}
       </main>

@@ -135,6 +135,9 @@ body {
 
     --ifm-background-color: var(--docs-color-background);
     --ifm-background-surface-color: var(--docs-color-background);
+
+    --ifm-menu-link-padding-vertical: 0.45rem;
+    --ifm-menu-link-padding-horizontal: 0.75rem;
 }
 
 [data-theme='dark'] {

@@ -11,6 +11,18 @@
     "message": "Создаём надёжные цифровые решения для бизнеса: от&nbsp;внутренней автоматизации до&nbsp;высоконагруженных систем. Упрощаем сложное, внедряем устойчивое.",
     "description": "Title for the anniversary page"
   },
+  "theme.recloud.community.join": {
+    "message": "Присоединяйся к ",
+    "description": "Join the"
+  },
+  "theme.recloud.community": {
+    "message": "Сообществу",
+    "description": "community"
+  },
+  "theme.recloud.community.text": {
+    "message": "Присоединяйтесь к нам и станьте частью нашего дружного и активного сообщества.",
+    "description": "Join us and be welcomed into our supportive and vibrant community."
+  },
   "theme.recloud.hero.our-site": {
     "message": "Наш сайт",
     "description": "Our site link"

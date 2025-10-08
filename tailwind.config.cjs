@@ -51,8 +51,8 @@ module.exports = {
         text: {
           400: 'rgb(var(--docs-color-text-400, 153 153 153) / <alpha-value>)',
         },
-        darkblue: '#1B2A4E',
-        darkerblue: '#192440',
+        darkblue: '#0a0e1b',
+        darkerblue: '#04050a',
         darkestblue: '#171B2D',
       },
     },
