@@ -1,16 +1,19 @@
 // @ts-ignore
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import DarkVeil from "../../components/homepage/DarkVeil/DarkVeil";
 
 export default function HeroSection() {
     return (
-        <section className="w-full py-20 md:py-24 lg:py-36 overflow-hidden">
+        <section className="w-full py-20 md:py-24 lg:py-64 overflow-hidden relative">
+            <DarkVeil/>
+            <div className="darkveil-canvas-gradient"></div>
             <div className="container px-4 md:px-6 relative">
 
                 <div className="text-center max-w-3xl mx-auto mb-12 animate-in">
                     <div
-                        className="mt-8 mb-4 inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">
-                        wiki
+                        className="mt-8 mb-4 inline-flex items-center dark:bg-white/5 border-white border-2 rounded-full px-4 py-2 text-sm font-medium">
+                        Official Wiki
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-6">
                         <Translate

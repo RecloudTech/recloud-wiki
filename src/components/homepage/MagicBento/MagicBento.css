@@ -31,7 +31,6 @@
     padding: 1.25em;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    background: var(--background-dark);
     font-weight: 300;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -51,7 +50,6 @@
 .card__content {
     display: flex;
     position: relative;
-    color: var(--white);
     gap: 4px;
 }
 

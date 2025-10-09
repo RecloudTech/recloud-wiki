@@ -27,7 +27,7 @@ const cardData = [
         color: '#0a0e1b',
         title: 'Установка',
         description: 'Быстрая установка и настройка.',
-        label: 'Загрузка',
+        label: 'Инсталляция',
         href: '/docs/gml-launcher/backend/installation/'
     },
     {
@@ -513,7 +513,6 @@ const MagicBento = ({
           const cardProps = {
             className: baseClassName,
             style: {
-              backgroundColor: card.color,
               '--glow-color': glowColor
             }
           };
@@ -537,12 +536,12 @@ const MagicBento = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header">
-                    <div className="card__label">{card.label}</div>
+                  <div className="">
+                    <div className="border w-max text-sm border-white bg-white/5 py-1 px-4 rounded-full dark:text-white/80 text-darkblue/80">{card.label}</div>
                   </div>
                   <div className="card__content">
-                    <h2 className="card__title">{card.title}</h2>
-                    <p className="card__description">{card.description}</p>
+                    <h2 className="card__title dark:text-white text-darkblue">{card.title}</h2>
+                    <p className="card__description dark:text-white/80 text-darkblue/80">{card.description}</p>
                   </div>
                 </ParticleCard>
               </Link>
