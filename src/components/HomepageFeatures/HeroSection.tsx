@@ -6,7 +6,9 @@ import DarkVeil from "../../components/homepage/DarkVeil/DarkVeil";
 export default function HeroSection() {
     return (
         <section className="w-full py-20 md:py-24 lg:py-64 overflow-hidden relative">
-            <DarkVeil/>
+            <div className="hidden dark:block w-full h-full absolute">
+                <DarkVeil/>
+            </div>
             <div className="darkveil-canvas-gradient"></div>
             <div className="container px-4 md:px-6 relative">
 
