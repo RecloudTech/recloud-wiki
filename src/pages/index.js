@@ -14,6 +14,7 @@ import HeroQuickLinks from "../components/homepage/HeroQuickLinks";
 import CommunitySection from "../components/homepage/CommunitySection";
 import HelpSection from "../components/homepage/HelpSection";
 import GuidesAndSamples from "../components/homepage/GuidesAndSamples";
+import MagicBento from "../components/homepage/MagicBento/MagicBento";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -48,7 +49,19 @@ export default function Home() {
         <HelloBar />
       {/*<HomepageHeader />*/}
       <HeroSection />
-      <HeroQuickLinks />
+      {/*<HeroQuickLinks />*/}
+        <MagicBento
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={400}
+            particleCount={12}
+            glowColor="13, 110, 253"
+        />
       <GuidesAndSamples />
       <HelpSection />
       <CommunitySection />
