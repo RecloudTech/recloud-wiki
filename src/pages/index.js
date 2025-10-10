@@ -55,8 +55,8 @@ export default function Home() {
             enableStars={true}
             enableSpotlight={true}
             enableBorderGlow={true}
-            enableTilt={true}
-            enableMagnetism={true}
+            enableTilt={false}
+            enableMagnetism={false}
             clickEffect={true}
             spotlightRadius={400}
             particleCount={12}
