@@ -3,11 +3,16 @@ import { DocsCard } from './';
 import styles from './DocsCard.css'
 
 export const DocsCardList = ({ list }) => {
-    console.log('list', list);
     return (
-        <div className='card-container-setup'>
-            {list.map(item => <DocsCard key={item.docId} label={item.label} link={item.href} />)}
-        </div>
+        <div className="grid gap-4 card-container-setup grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+            {list.map(item => (
+              <DocsCard
+                key={item.docId}
+                label={item.label}
+                link={item.href}
+              />
+            ))}
+          </div>
     )
 }
 
