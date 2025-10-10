@@ -28,7 +28,7 @@ export default function HelpSection({ className = '' }) {
               href="https://blog.recloud.tech/product-category/gml-pro/"
               className="text-primary-00 dark:text-primary-100"
             >
-              Изучайте подписки &rarr;
+              Изучите подписки &rarr;
             </Link>
           </div>
 
@@ -52,7 +52,7 @@ export default function HelpSection({ className = '' }) {
               Ознакомьтесь с нашими часто задаваемыми вопросами, чтобы найти ответы на наиболее популярные из них.
             </p>
             <Link href="/docs/gml-launcher/faq/" className="text-primary-500 dark:text-primary-100">
-              View FAQs &rarr;
+              Перейти к FAQs &rarr;
             </Link>
           </div>
         </div>

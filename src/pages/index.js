@@ -60,7 +60,7 @@ export default function Home() {
             clickEffect={true}
             spotlightRadius={400}
             particleCount={12}
-            glowColor="13, 110, 253"
+            glowColor="6, 37, 81"
         />
       <GuidesAndSamples />
       <HelpSection />
