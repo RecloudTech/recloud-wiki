@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 # Безопасность
 
 Безопасность в проекте Gml GamerVII Minecraft Launcher играет ключевую роль.
