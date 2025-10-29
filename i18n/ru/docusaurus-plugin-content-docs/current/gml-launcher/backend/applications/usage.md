@@ -31,7 +31,7 @@ curl -X GET https://api.gml.dev/v1/profiles \
 ```js
 const axios = require("axios");
 
-const API_URL = "https://api.gml.dev/v1/profiles";
+const API_URL = "https://gmlf.recloud.tech/api/v1/profiles";
 const TOKEN = "ВАШ_ТОКЕН_ПРИЛОЖЕНИЯ";
 
 async function fetchProfiles() {
