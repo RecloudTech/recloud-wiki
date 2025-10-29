@@ -10,7 +10,7 @@ import PublishRider2 from '/img/publish-rider-2.png';
 
 ### Загрузка лаунчера
 
-Выполните папку в удобной для вас директории
+Выполните команду в удобной для вас директории
 
 <Tabs>
     <TabItem value="stable" label="Стабильная версия" default>

@@ -185,8 +185,6 @@ dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64 -p:CFBundleDisplayName=
 dotnet publish -r osx-x64 --configuration Release -p:UseAppHost=true
 ```
 
-Here's the translated version of the detailed tutorial on creating and packaging a macOS application using Avalonia and .NET Core:
-
 ---
 
 Создание `Info.plist` файла, добавление или изменение ключей по необходимости:

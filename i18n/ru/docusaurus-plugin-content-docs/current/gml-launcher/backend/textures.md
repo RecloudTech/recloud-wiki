@@ -76,7 +76,6 @@ https://mc.recloud.tech/cabient/cloaks/GamerVII.png
 ```
 Именно такие ссылки нужно указать на странице "Интеграции" -> "Сервис скинов"
 
-
 > **Важно!** Вместо ника вы можете использовать **UUID** или **Ник игрока**
 > Замените его в соответствии со следующими правилами
 > ```
@@ -88,9 +87,6 @@ https://mc.recloud.tech/cabient/cloaks/GamerVII.png
 > https://mc.recloud.tech/cabient/skins/{userName}.png
 > https://mc.recloud.tech/cabient/cloaks/{userName}.png
 > ```
-
-Пример в системе:
-
 
 ## Устранение проблем с текстурами
 

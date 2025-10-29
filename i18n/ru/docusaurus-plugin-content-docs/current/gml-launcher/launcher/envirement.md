@@ -4,7 +4,7 @@ sidebar_position: 1
 import AvaloniaVsExtensionMarketplaceScreenshot from '/img/avalonia-plugin-vs.png';
 import AvaloniaVsExtensionNuGetScreenshot from '/img/avalonia-vs-extension-nuget.png';
 
-# Подготовка окружающей среды
+# Подготовка
 
 Разработанное решение имеет специфичный стек технологий разработки,
 установка и настройка которого требует дополнительных навыков и умений.
@@ -17,7 +17,7 @@ import AvaloniaVsExtensionNuGetScreenshot from '/img/avalonia-vs-extension-nuget
 
 # Настройка редактора
 
-Вы можете создавать приложения на Avalonia в любом редакторе кода, но мы настоятельно рекомендуем использовать IDE с поддержкой Avalonia XAML, предварительным просмотром и другими полеными функциями.
+Вы можете создавать приложения на Avalonia в любом редакторе кода, но мы настоятельно рекомендуем использовать IDE с поддержкой Avalonia XAML, предварительным просмотром и другими полезными функциями.
 
 ## JetBrains Rider
 
@@ -47,5 +47,5 @@ Rider не имеет встроенного предпросмотра, но о
 :::
 
 :::info
-Если вы используете VS201 или VS2019, то вам нужно скачать [старую версию расширения](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio).
+Если вы используете VS2021 или VS2019, то вам нужно скачать [старую версию расширения](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio).
 :::

@@ -27,9 +27,6 @@ sidebar_position: 2
 | `Windows`    | ✔️             |
 | `macOS `     | ✔️             |
 | `Linux`      | ✔️             |
-| `iOS`        | ✔️             |
-| `Android`    | ✔️             |
-| `WebAssembly`| ✔️             |
 
 ## Windows
 
