@@ -1,1 +1,3 @@
-# module-create frontend
+# Разработка фронтенда
+
+...

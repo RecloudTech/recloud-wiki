@@ -2,4 +2,97 @@
 sidebar_position: 3
 ---
 
-# Install Source
+# Прочие системы
+
+Инструкции по установке и настройке серверной части проекта для прочих операционных систем, не имеющих установщика
+
+## Клонирование репозитория
+
+Выполните следующую команду в вашем терминале:
+
+```
+git clone --recursive -b v2025.3.2 https://github.com/GamerVII-NET/Gml.Backend.git
+```
+
+## Переход в директорию проекта
+
+Выполните следующую команду в вашем терминале:
+
+```bash
+cd Gml.Backend
+```
+
+#### Настройка config файла
+
+Отредактируйте или создайте файл `.env` в корне папки `Gml.Backend`
+
+:::info
+Обязательно замените SECURITY_KEY!
+
+Для его генерации можно воспользоваться следующей командой: 
+```bash
+openssl rand -hex 32
+```
+
+:::
+
+```yaml
+# Пример уже настроенного .env
+
+# UID (User Identifier) и GID (Group Identifier) используется
+# для указания id пользователя и группы в Linux.
+UID=0
+GID=0
+
+SECURITY_KEY=643866c80c46c909332b30600d3265803a3807286d6eb7c0d2e164877c809519
+PROJECT_NAME=GmlBackendPanel
+PROJECT_DESCRIPTION=
+PROJECT_POLICYNAME=GmlServerPolicy
+PROJECT_PATH=
+
+  # Включить подключение к S3
+S3_ENABLED=true
+  # root пользователь панели управления
+MINIO_ROOT_USER=GamerVII
+  # root пароль панели управления
+MINIO_ROOT_PASSWORD=waefawegferyjerthdrthrtrdthdr
+
+  # Включить Swagger
+SWAGGER_ENABLED=true
+
+  # Настройки внешнего доступа
+  # Порты, на которых будут работать приложения
+  # адрес консоли (:5009 или 10.2.0.1:5009)
+MINIO_ADDRESS=:5009
+  # Порт консоли (совпадает с записью выше)
+MINIO_ADDRESS_PORT=5009
+  # адрес панели (:5010 или 10.2.0.1:5010)
+MINIO_CONSOLE_ADDRESS=:5010
+  # Порт (совпадает с записью выше)
+MINIO_CONSOLE_ADDRESS_PORT=5010
+  # Web Api
+PORT_GML_BACKEND=5000
+  # Панель управления проектом
+PORT_GML_FRONTEND=5003
+  # Файловый сервис
+PORT_GML_FILES=5005
+  # Сервис скинов
+PORT_GML_SKINS=5006
+
+  # Микросервисы:
+SERVICE_TEXTURE_ENDPOINT=http://gml-web-skins:8085
+MARKET_ENDPOINT=https://gml-market.recloud.tech
+```
+
+#### Запуск проекта с использованием Docker
+
+Выполните следующую команду в вашем терминале:
+
+```bash
+docker compose up -f ./docker-compose-prod.yml -d
+```
+
+Пожалуйста, убедитесь, что Docker установлен и работает на вашем компьютере/сервере для выполнения этой команды.
+
+После выполнения команды Docker загрузит необходимые образы и запустит проект.
+После запуска проекта, вы сможете открыть его в браузере, используя адрес `http://<ip_вашего_сервера>:5003`.

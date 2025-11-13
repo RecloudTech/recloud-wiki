@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 50
 ---
 
-# Guides
+# Гайды
 
 import {DocsCardList} from "@site/src/components/DocsCard";
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
