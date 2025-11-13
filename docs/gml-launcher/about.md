@@ -1,28 +1,24 @@
 ---
 sidebar_position: 1
 ---
-# О проекте
+# About the Project
 
-Информация об инфраструктуре для игровых проектов Minecraft Gml Backend.
+Information about the infrastructure for Minecraft game projects using Gml Backend.
 
-## Краткий обзор
-Gml представляет собой совокупность серверных и клиентских библиотек, разработанных с использованием современных
-технологий, таких как C#, TypeScript, DotNET 8, Net standard 2.1, Minimal APIs, Docker, Docker compose, React.
-Эти технологии обеспечивают высокую производительность, кроссплатформенность и удобство в разработке и использовании.
+## Overview
+Gml is a set of server and client libraries developed using modern technologies such as C#, TypeScript, .NET 8, .NET Standard 2.1, Minimal APIs, Docker, Docker Compose, and React.  
+These technologies provide high performance, cross-platform compatibility, and ease of development and use.
 
-## Основные возможности
-### 1. Кроссплатформенность
-Gml поддерживает развертывание на различных операционных системах, обеспечивая универсальность и легкость в использовании.
+## Key Features
 
-### 2. Инфраструктура для Minecraft
-Gml предоставляет необходимые инструменты для создания и управления игровыми клиентами и профилями вашего проекта Minecraft.
+### 1. Cross-Platform
+Gml supports deployment on various operating systems, ensuring versatility and ease of use.
 
-### 3. Современные технологии
+### 2. Minecraft Infrastructure
+Gml provides the necessary tools for creating and managing game clients and profiles for your Minecraft project.
 
-Применение новейших технологий, таких как C#, DotNET 8, Net standard 2.1, Minimal APIs, Docker и ASP.NET.
+### 3. Modern Technologies
+Uses the latest technologies such as C#, .NET 8, .NET Standard 2.1, Minimal APIs, Docker, and ASP.NET.
 
-### 4. Гибкость и расширяемость
-Gml разработан с учетом гибкости и возможности расширения, что позволяет легко адаптировать его под различные потребности и требования проектов.
-
-
-
+### 4. Flexibility and Extensibility
+Gml is designed with flexibility and extensibility in mind, making it easy to adapt to the diverse needs and requirements of different projects.

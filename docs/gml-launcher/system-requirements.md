@@ -1,32 +1,31 @@
 ---
 sidebar_position: 2
 ---
-# Системные требования
+# System Requirements
 
+Ensure your hardware can support the project installation.
 
-Убедитесь в возможности инсталляции проекта на вашем оборудовании
+Before installing Gml, make sure your system meets the following requirements:
 
-Перед установкой Gml удостоверьтесь, что ваша система соответствует следующим требованиям:
+## Server Hardware Requirements
 
-## Аппаратные требования для серверной части
+| Parameter                     | Specification                                                                                                                   |
+|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Operating System              | Windows, macOS, Linux (with [Docker](https://www.docker.com) support)                                                           |
+| RAM                           | At least 4096 MB for running<br/><br/> ~512 MB for operation                                                                    |
+| CPU Cores                      | 1 or more                                                                                                                      |
+| Disk Space                     | 4 GB – Control Panel + Backend<br/>4 GB – per game profile<br/>8–10 GB – Launcher Builder + Game Profile Builder              |
+| Docker Installation           | Required                                                                                                                        |
 
-| Параметр                     | Значение                                                                                                                         |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Операционная система         | Windows, MacOS, Linux (где работает [Docker](https://www.docker.com))                                                            |
-| Оперативная память           | не менее 4096 Мб для запуска<br/><br/> ~ 512 Мб для работы                                                                       |
-| Процессорных ядер            | 1 и более                                                                                                                        |
-| Место на диске               | 4Гб - Панель управления + Бекенд<br/>4Гб - каждый игровой профиль<br/>8-10Гб - Сборщик лаунчера + Сборщик игровых профилей <br/> |
-| Возможность установки Docker | Обязательно                                                                                                                      |
+## Launcher Requirements
 
-## Требования к запуску лаунчера
+The launcher can run on the following platforms:
 
-Лаунчер можно использовать для запуска на следующих платформах:
-
-| Платформа    | Поддерживается |
-|--------------|----------------|
-| `Windows`    | ✔️             |
-| `macOS `     | ✔️             |
-| `Linux`      | ✔️             |
+| Platform     | Supported |
+|--------------|-----------|
+| `Windows`    | ✔️        |
+| `macOS`      | ✔️        |
+| `Linux`      | ✔️        |
 
 ## Windows
 
@@ -34,7 +33,7 @@ sidebar_position: 2
 * Windows 10
 * Windows 11
 
-Хотя приложения Avalonia успешно запускаются на Windows 7, эта устаревшая платформа получает ограниченную поддержку. Мы больше не исправляем ошибки, специфичные для Windows 7.
+Although Avalonia applications run on Windows 7, this legacy platform receives limited support. We no longer fix Windows 7-specific bugs.
 
 ## macOS
 
@@ -52,6 +51,6 @@ sidebar_position: 2
 * Ubuntu 16.04+
 * Fedora 30+
 
-Лаунчер стабильно работает на большинстве Linux-дистрибутивов, если они поддерживают .NET SDK и имеют возможности X11 или framebuffer. Официально поддерживаются Debian 9+, Ubuntu 16.04+ и Fedora 30+, но многие другие дистрибутивы также успешно запускают приложения на базе Avalonia. Мы активно работаем над расширением совместимости с Linux.
+The launcher works stably on most Linux distributions that support .NET SDK and have X11 or framebuffer capabilities. Officially supported distributions are Debian 9+, Ubuntu 16.04+, and Fedora 30+, but many other distributions also successfully run Avalonia-based applications. We are actively working to expand Linux compatibility.
 
-Также поддерживаются дистрибутивы WSL 2, однако зависимости `libice6`, `libsm6` и `libfontconfig1` должны быть установлены вручную.
+WSL 2 distributions are also supported; however, the dependencies `libice6`, `libsm6`, and `libfontconfig1` must be installed manually.
