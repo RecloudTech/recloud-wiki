@@ -2,26 +2,25 @@
 sidebar_position: 1
 ---
 
-# Руководство по настройке Nginx
+# Nginx Setup Guide
 
-## 1. Настройка HTTPS и обратного проксирования
+## 1. Configure HTTPS and Reverse Proxy
 
-Создайте конфигурационный файл Nginx для домена **gmlf.ВашСайт**.
+Create an Nginx configuration file for your domain **gmlf.YourSite**.
 
-
-```
+```nginx
 server {
     listen 80;
-    server_name gmlf.ВашСайт;
-    return 301 https://$host$request_uri; # Перенаправление всех запросов на HTTPS
+    server_name gmlf.YourSite;
+    return 301 https://$host$request_uri; # Redirect all requests to HTTPS
 }
 
 server {
     listen 443 ssl;
-    server_name gmlf.ВашСайт;
+    server_name gmlf.YourSite;
 
-    ssl_certificate /etc/letsencrypt/live/gmlf.ВашСайт/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/gmlf.ВашСайт/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/gmlf.YourSite/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/gmlf.YourSite/privkey.pem;
 
     location / {
         proxy_pass http://127.0.0.1:5003;
@@ -35,86 +34,77 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
-```
+````
 
 ---
 
-## 2. Проверка корректности конфигурации и перезапуск службы
+## 2. Check Configuration and Restart Service
 
-Для проверки синтаксиса конфигурационного файла выполните команду:
+To check the syntax of the configuration file, run:
 
 ```bash
 nginx -t
 ```
 
-Ожидаемый результат:
+Expected output:
 
 ```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-Если ошибок не обнаружено, перезапустите службу Nginx:
+If there are no errors, restart the Nginx service:
 
 ```bash
 service nginx restart
 ```
 
-После успешного перезапуска **Frontend** и **Backend** будут доступны по защищённому протоколу:
+After a successful restart, the **Frontend** and **Backend** will be accessible via HTTPS:
 
 ```
-https://gmlf.ВашСайт
+https://gmlf.YourSite
 ```
 
 ---
 
-## 3. Установка и настройка SSL-сертификата Let's Encrypt
+## 3. Install and Configure Let's Encrypt SSL Certificate
 
-На сервере, выполняющем роль прокси, выполните установку необходимых пакетов:
+On the server acting as a proxy, install the required packages:
 
 ```bash
 sudo apt update
 sudo apt install -y certbot python3-certbot-nginx
 ```
 
-После установки инициируйте получение SSL-сертификата:
+After installation, initiate the SSL certificate issuance:
 
 ```bash
-certbot certonly --nginx -d gmlf.ВашСайт
+certbot certonly --nginx -d gmlf.YourSite
 ```
 
-Во время первого запуска потребуется:
+During the first run, you will need to:
 
-* Указать действующий адрес электронной почты;
-* Согласиться с условиями использования, ответив `Y`.
-
----
-
-## 4. Настройка Cloudflare (при использовании)
-
-:::info
- ⚠️ данный раздел применим **только** при использовании Cloudflare.
-:::
-
-Если домен обслуживается через Cloudflare:
-
-1. Перейдите в раздел **SSL/TLS** панели Cloudflare.
-2. Убедитесь, что соединение отображается в виде **замков с обеих сторон**.
-3. Нажмите **Configure → Custom SSL/TLS**.
-4. Установите режим **FULL**.
-
-:::info
-Режим **FULL** требует наличия действительного сертификата Let's Encrypt на сервере (VDS).
-:::
-
+* Provide a valid email address.
+* Agree to the terms of service by entering `Y`.
 
 ---
 
-## 5. Завершение настройки
+## 4. Cloudflare Configuration (if used)
 
-После выполнения всех вышеуказанных шагов:
+If your domain is managed via Cloudflare:
 
-* Сервер доступен по протоколу **HTTPS**;
-* Запросы корректно проксируются на backend (порт `5003`);
-* Используется действующий сертификат **Let's Encrypt**;
-* Конфигурация совместима с режимом **Cloudflare Full SSL**.
+1. Go to the **SSL/TLS** section in the Cloudflare panel.
+2. Ensure the connection shows **locked icons on both sides**.
+3. Click **Configure → Custom SSL/TLS**.
+4. Set the mode to **FULL**.
+
+---
+
+## 5. Finalizing Setup
+
+After completing all steps:
+
+* The server will be accessible via **HTTPS**;
+* Requests will be correctly proxied to the backend (port `5003`);
+* A valid **Let's Encrypt** certificate will be in use;
+* Configuration will be compatible with **Cloudflare Full SSL** mode.

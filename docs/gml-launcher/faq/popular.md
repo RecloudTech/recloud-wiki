@@ -1,7 +1,8 @@
 ---
+
 sidebar_position: 1
-id: popular
----
+id: Popular
+-----------
 
 import GmlFaq2 from '/img/gml-faq-2.png';
 import GmlFaq3 from '/img/gml-faq-3.png';
@@ -17,191 +18,179 @@ import GmlFaq12 from '/img/gml-faq-12.png';
 import GmlFaq13 from '/img/gml-faq-13.png';
 import GmlFaq14 from '/img/gml-faq-14.png';
 
-# Популярные проблемы
+# Common Issues
 
-За время работы и разработки проекта у пользователей возникали множество вопросов и проблем.
-В данном разделе мы собрали наиболее часто встречающиеся из них и предоставили подробные ответы и решения.
+Throughout the development and operation of the project, users have encountered many questions and problems.
+In this section, we have collected the most frequently occurring ones and provided detailed answers and solutions.
 
-## Отсутствие связи с сервером Api
+## No Connection to the Api Server
 
-Часто возникающая проблема, разрыва или отсутствия соединения с Gml.Web.Api (Поставщика данных)
+A common issue is disconnection or lack of connection to Gml.Web.Api (the data provider).
 
-### Признаки
+### Symptoms
 
-- Ошибка: Ошибка сервиса авторизации. Обратитесь к администратору платформы
-- Если прописать ```docker ps -a``` на вашем сервере - вы видите упавший контейнер Gml.Web.Api
-- У вас недоступен сервис на 5003 порту, например:
-    - http://localhost:5003
-    - http://192.168.31.200:5003
-    - IP_SERVER:5000
+* Error: Authorization service error. Contact your platform administrator.
+* If you run `docker ps -a` on your server, you may see the Gml.Web.Api container has stopped.
+* The service is unavailable on port 5003, for example:
 
-### Варианты решения
+    * [http://localhost:5003](http://localhost:5003)
+    * [http://192.168.31.200:5003](http://192.168.31.200:5003)
+    * IP_SERVER:5000
 
-- Проверьте подключение к интернету и убедитесь, что правильно сконфигурированы параметры подключения к серверу Gml Api.
-- Проверьте, что ваш фронтенд-часть видит сервер, и что устройство с которого открывается страница Gml.Frontend видит
-  Gml.Api [(Как это сделать](faq-details.md#api-available))
-- Проверьте конфигурационный файл Gml.Frontend ```.env``` в папке ```src/Gml.Web.Client/.env``` он должен выглядеть
-  следующим образом
-    ```
-    # Адрес к Web Api
-    NEXT_PUBLIC_BACKEND_URL=http://localhost:5003/api/v1
-    NEXT_PUBLIC_MARKETPLACE_URL=https://gml-market.recloud.tech
-    ```
-  > Внимание! Не должно быть ```/``` в конце адреса и выбран верный протокол ```http``` или ```https```
+### Possible Solutions
 
-Если вы заметили ошибку и исправили ее, то
-выполните [скрипт обновления](https://github.com/Gml-Launcher/Gml.Backend.Installer),
-который перекачает и пересоберет все необходимые компоненты системы
+* Check your internet connection and ensure the connection parameters to the Gml Api server are configured correctly.
+* Verify that your frontend can see the server, and that the device opening the Gml.Frontend page can reach Gml.Api [(How to check)](faq-details.md#api-available)
+* Check the Gml.Frontend configuration file `.env` in the folder `src/Gml.Web.Client/.env`, it should look like:
 
-## Не сохраняются настройки игры
+  ```
+  # Address to Web Api
+  NEXT_PUBLIC_BACKEND_URL=http://localhost:5003/api/v1
+  NEXT_PUBLIC_MARKETPLACE_URL=https://gml-market.recloud.tech
+  ```
 
-Это нормальное поведение лаунчера. Лаунчер, в цели безопасности и целостности игровых клиентов,
-при заходе в игру удаляет все, что не относится к [папке игрового клиента](Работа-с-модами.md) и файлы - не исключение.
-Для решения данной проблемы создан [белый список папок и файлов](gml-white-lists.md). Прочитайте данную страницу и
-добавьте
-файл ```options.txt``` в белый список
+  > Note! There should be no trailing `/` in the address, and the correct protocol `http` or `https` must be selected.
 
-## Нет нужной версии Minecraft
+If you have fixed the error, run the [update script](https://github.com/Gml-Launcher/Gml.Backend.Installer)
+to re-download and rebuild all necessary system components.
 
-Мы поддерживаем исключительно официальные репозитории игры, а так же модовых клиентов. Все версии автоматически парсятся
-из официальных источников. Это позволяет нам не следить за обновлениями Minecraft. Они сами будут появляться для вас,
-без необходимости обновлять панель Gml.
+## Game Settings Not Saved
 
-## Не удалось восстановить игровой профиль
+This is normal launcher behavior. For security and integrity of game clients,
+the launcher deletes everything unrelated to the [game client folder](Работа-с-модами.md), including files, when starting the game.
+To solve this issue, a [whitelist of folders and files](gml-white-lists.md) has been created.
+Read this page and add the `options.txt` file to the whitelist.
 
-### Признаки
+## Minecraft Version Not Available
 
-Вы видите примерно такие ошибки.
-<p><img className="image-zoom-medium" src={GmlFaq2} alt=""/></p>
-Обращаем ваше внимание, что не все игровые клиенты поддерживают определенные форматы систем.
-Например, 1.20.1 не поддерживается на системах osx с архитектурой 32, и это совершенно нормально. Такие ошибки можно
-игнорировать
+We support only official game repositories and modded clients. All versions are automatically parsed from official sources.
+This allows us not to track Minecraft updates manually—they will appear automatically without updating the Gml panel.
+
+## Unable to Restore Game Profile
+
+### Symptoms
+
+You may see errors like these:
+
+<p><img className="image-zoom-medium" src={GmlFaq2} alt=""/></p>  
+Note that not all game clients support certain system formats.  
+For example, 1.20.1 is not supported on OSX systems with 32-bit architecture, which is normal. Such errors can be ignored.
 
 <p><img className="image-zoom-medium" src={GmlFaq3} alt=""/></p>
-<p><img className="image-zoom-medium" src={GmlFaq4} alt=""/></p>
-Если у вас возникают ошибки такого рода, то они гораздо серьезнее. Gml Backend построен таким образом, что он способен
-чинить
-сам себя, однако, при некоторых действиях администратора - целостность профиля может быть нарушена, в таком случае
-поможет
-исключительно пересоздание игрового профиля.
+<p><img className="image-zoom-medium" src={GmlFaq4} alt=""/></p>  
+If errors of this kind occur, they may be more serious. Gml Backend is designed to self-repair, but some administrator actions may break profile integrity. In such cases, the only solution is to recreate the game profile.
 
-Так же, ошибки подобного рода могут возникать, если в процессе загрузки игрового клиента minecraft отдал файл не
-полностью,
-или он не докачался, или произошла одна из ошибок ISO/OSI, в таком случае можно попытаться
-повторно "[Загрузить клиент](profiles-download.md)"
-или как обговаривалось ранее - полностью пересоздать. На проблемы транспортного уровня мы никак повлиять не можем.
+Also, such errors may happen if the Minecraft client file was not fully downloaded, or there was an ISO/OSI-level error.
+In this case, try to "[Download the client again](profiles-download.md)" or, as mentioned earlier, recreate the profile completely. Transport-level issues cannot be fixed from the launcher side.
 
-## В лаунчере отсутствуют проекты
+## Projects Missing in the Launcher
 
-### Признаки
+### Symptoms
 
-<p><img className="image-zoom-medium" src={GmlFaq5} alt=""/></p>
-Вы не видите все, или частично проекты
+<p><img className="image-zoom-medium" src={GmlFaq5} alt=""/></p>  
+You cannot see all projects or only partially.
 
-### Решение
+### Solution
 
-Необходимо загрузить зависимые проекты лаунчера, для этого в корне проекта лежат файлы bat и sh, которые необходимо
-запустить в зависимости от вашей операционной системы. Если при запуске у вас ничего не происходит или сразу закрывается
-консоль, то проверьте установлена ли у вас [система контроля версий Git ](https://git-scm.com)
+You need to download the launcher’s dependent projects.
+In the project root, there are bat and sh files to run depending on your operating system.
+If nothing happens or the console closes immediately, check if [Git version control](https://git-scm.com) is installed.
 
-## Не работает Minio
+## Minio Not Working
 
-Minio может не работать из-за того, что у вас при установке был установлен слишком простой пароль.
-Смените его в ```.env``` файле и перезапустите проект ```docker compose restart```
+Minio may fail if a too-simple password was set during installation.
+Change it in the `.env` file and restart the project with `docker compose restart`.
 
-## Как подключить Discord
+## Connecting Discord
 
-Для подключения Discord к вашему лаунчеру,
-необходимо [зарегистрировать бота на официальном сайте Discord](https://discord.com/developers/applications/)
-И заполнить соответствующую страницу в Панели
+To connect Discord to your launcher,
+[register a bot on the official Discord website](https://discord.com/developers/applications/)
+and fill in the corresponding page in the Panel.
+
 <p><img className="image-zoom-medium" src={GmlFaq6} alt=""/></p>
 
-## Произошла ошибка при работе с файловой системой
+## File System Error
 
-### Признаки
+### Symptoms
 
-<p><img className="image-zoom-medium" src={GmlFaq7} alt=""/></p>
-Вы видите данную ошибку, профиль не открывается
+<p><img className="image-zoom-medium" src={GmlFaq7} alt=""/></p>  
+You see this error and the profile cannot be opened.
 
-### Решение
+### Solution
 
-Ошибка говорит сама за себя, необходимо перезапустить весь сервис gml командой ```docker compose restart```
-или перезапустить сам сервер.
+The error is self-explanatory. Restart the entire Gml service with `docker compose restart` or restart the server itself.
+This error can be caused by file locks from another process or system service.
 
-Возможными причинами такой ошибки являются блокировка файлов в системе другим процессом или службой.
+## Server Not Starting with authlib-injector
 
-## Не запускается сервер с authlib-injector
+### Symptoms
 
-### Признаки
+<p><img className="image-zoom-medium" src={GmlFaq8} alt=""/></p>  
+You see this error and the game server crashes.
 
-<p><img className="image-zoom-medium" src={GmlFaq8} alt=""/></p>
-Вы видите данную ошибку, игровой сервер крашится
+### Solution
 
-### Решение
+The issue usually occurs because the wrong protocol (`http` or `https`) is specified in the startup parameter.
 
-Решение обычно сводится к тому, что в параметре, передаваемом в запуске указан не верный протокол ```http``` или
-
-Решение обычно сводится к тому, что в параметре, передаваемом в запуске указан не верный протокол ```http``` или
-```https```
-<p><img className="image-zoom-medium" src={GmlFaq9} alt=""/></p>
-Например, как в этом примере. Неправильно указан протокол. Для localhost и IP адресов может быть только ```http```
-Так же попробуйте перейти по данному адресу, вы должны увидеть примерно следующее:
+<p><img className="image-zoom-medium" src={GmlFaq9} alt=""/></p>  
+For localhost and IP addresses, only ```http``` is allowed.  
+Try visiting the address; you should see something like this:  
 <p><img className="image-zoom-medium" src={GmlFaq10} alt=""/></p>
 
-## Не удалось обнаружить загруженную JAVA
+## JAVA Not Detected
 
-### Признаки
-<p><img className="image-zoom-medium" src={GmlFaq11} alt=""/></p>
-Вы видите данную ошибку, игровой клиент не запускается
+### Symptoms
 
-### Решение
+<p><img className="image-zoom-medium" src={GmlFaq11} alt=""/></p>  
+You see this error, and the game client won’t start.
 
-У вас не загружен профиль до конца (на сервере), или не собран. Первым делом попробуйте пересобрать профиль, либо
-[загрузите профиль заново](profiles-download.md)
+### Solution
 
-## Произошла ошибка при обмене данных с сервисом авторизации
+Your profile is not fully downloaded or built on the server.
+First, try rebuilding the profile or [download the profile again](profiles-download.md).
 
-### Признаки
+## Authorization Service Data Exchange Error
 
-<p><img className="image-zoom-medium" src={GmlFaq12} alt=""/></p>
-Вы видите данную ошибку, авторизация не происходит
+### Symptoms
 
-### Решение
+<p><img className="image-zoom-medium" src={GmlFaq12} alt=""/></p>  
+You see this error, and authorization fails.
 
-Сервер авторизации Gml.Web.Api не видит (или возвращает ошибочный ответ) ваш сайт или CMS, на которой проверяется
-аутентификация пользователя.
-Убедитесь в правильности настройки раздела ```Интеграции``` -> ```Авторизация```
+### Solution
 
-## Папка GmlBackend пустая
+The Gml.Web.Api authorization server does not see (or returns an invalid response for) your site or CMS used for user authentication.
+Ensure the `Integrations` -> `Authorization` section is configured correctly.
 
-### Признаки
+## GmlBackend Folder Empty
 
-<p><img className="image-zoom-medium" src={GmlFaq13} alt=""/></p>
-Вы видите примерно следующее в папке ```data/GmlBackend```
+### Symptoms
 
-Это означает, что у вас неправильно произведена установка.
-Убедитесь что название вашего проекта в ```.env``` файле не имеет пробелов и спецсимволов.
+<p><img className="image-zoom-medium" src={GmlFaq13} alt=""/></p>  
+You see something like this in the ```data/GmlBackend``` folder.
 
-## Забыл пароль от Админ Панели
+This indicates an incorrect installation.
+Ensure your project name in the `.env` file has no spaces or special characters.
 
-### Решение
+## Forgot Admin Panel Password
 
-Выполните [скрипт обновления](https://github.com/Gml-Launcher/Gml.Backend.Installer),
-серверная часть удалит всех пользователей, но не тронет профили.
+### Solution
 
-## Не удалось найти проект по пути:
+Run the [update script](https://github.com/Gml-Launcher/Gml.Backend.Installer).
+The server part will remove all users but will not touch profiles.
 
-### Признаки
+## Project Not Found at Path
 
-<p><img className="image-zoom-medium" src={GmlFaq14} alt=""/></p>
-Вы видите примерно следующее
+### Symptoms
 
-Читайте документацию [по сборке через панель. ](launcher-panel-build-download.md#download)
+<p><img className="image-zoom-medium" src={GmlFaq14} alt=""/></p>  
+You see something like this.
 
-## Ошибка входа: Службы аутентификации отключены для проведения технических работ.
+Read the documentation [for building via the panel](launcher-panel-build-download.md#download).
 
-### Решение
+## Login Error: Authentication Services Disabled for Maintenance
 
-Такая проблема происходит, когда ваша система, сайт или платформа возвращает неверные UUID
+### Solution
 
-[Решение для Azuriom](gml-auth-azuriom.md)
+This occurs when your system, site, or platform returns incorrect UUIDs.
+
+[Solution for Azuriom](gml-auth-azuriom.md)

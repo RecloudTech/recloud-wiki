@@ -2,130 +2,137 @@
 sidebar_position: 2
 ---
 
-# Использование собственной версии Java
+# Using a Custom Java Version
 
-Данное руководство описывает, как подключить и использовать **собственную версию Java (JDK/JRE)** при сборке профиля в GML Backend.
+This guide explains how to configure and use your **own Java version (JDK/JRE)** when building a profile in GML Backend.
 
 ---
 
-## 1. Определение целевой платформы
+## 1. Determine the Target Platform
 
-Перейдите в директорию:
+Go to the directory:
 
 ```
+
 /srv/gml/data/GmlBackend/runtime/
-```
-
-Внутри вы найдёте каталоги, соответствующие различным операционным системам:
 
 ```
+
+Inside, you will find folders corresponding to different operating systems:
+
+```
+
 linux/
 linux-i386/
 mac-os/
 mac-os-arm64/
 windows-arm64/
-windows-x64/  ← пример
+windows-x64/  ← example
 windows-x86/
+
 ```
 
-> ⚠️ Выберите каталог, соответствующий системе, под которую вы собираете профиль.
-> В данном примере используется **`windows-x64`**.
+> ⚠️ Select the folder that matches the system for which you are building the profile.  
+> In this example, we will use **`windows-x64`**.
 
 ---
 
-## 2. Подготовка папки для своей Java
+## 2. Prepare the Folder for Your Java
 
-Перейдите в директорию выбранной платформы, например:
+Navigate to the chosen platform directory, for example:
 
 ```
+
 /srv/gml/data/GmlBackend/runtime/windows-x64/
-```
-
-Создайте (или откройте, если уже существует) каталог:
 
 ```
+
+Create (or open, if it already exists) a folder:
+
+```
+
 java-runtime-gamma
-```
+
+````
 
 ---
 
-## 3. Загрузка собственной Java
+## 3. Install Your Custom Java
 
-В каталоге `java-runtime-gamma` уже может находиться предустановленная Java.
-Чтобы заменить её своей версией:
+The `java-runtime-gamma` folder may already contain a preinstalled Java. To replace it with your version:
 
-1. Удалите все имеющиеся файлы в этой папке.
-2. Скопируйте сюда содержимое вашей JDK или JRE, которую хотите использовать.
-3. Убедитесь, что структура директории корректна и содержит исполняемые файлы (`bin/java`, `bin/java.exe` и т.п.).
+1. Remove all existing files in this folder.  
+2. Copy your JDK or JRE contents into this folder.  
+3. Ensure the directory structure is correct and contains executable files (`bin/java`, `bin/java.exe`, etc.).
 
 ---
 
-## 4. Установка прав доступа
+## 4. Set Permissions
 
-Для Linux или других UNIX-систем установите права доступа, разрешающие только чтение и выполнение:
+For Linux or other UNIX systems, set read and execute permissions only:
 
 ```bash
 chmod 0555 java-runtime-gamma
-```
+````
 
-Это создаст следующие разрешения:
+This will result in the following permissions:
 
-| Разрешения     | Владелец | Группа | Прочие |
-| -------------- | -------- | ------ | ------ |
-| R (Чтение)     | ✅        | ✅      | ✅      |
-| W (Запись)     | ❌        | ❌      | ❌      |
-| X (Выполнение) | ✅        | ✅      | ✅      |
+| Permission  | Owner | Group | Others |
+| ----------- | ----- | ----- | ------ |
+| R (Read)    | ✅     | ✅     | ✅      |
+| W (Write)   | ❌     | ❌     | ❌      |
+| X (Execute) | ✅     | ✅     | ✅      |
 
-**Код прав доступа:** `0555`
-**Владелец:** root
-**Группа:** root
+**Permission code:** `0555`
+**Owner:** root
+**Group:** root
 
-> ✅ Это защищает вашу Java от случайного изменения или удаления.
-
----
-
-## 5. Альтернативный способ (Windows, без WSL)
-
-Если вы работаете под **Windows 10/11** и не используете WSL, можно установить аналогичные ограничения через свойства NTFS:
-
-1. Щёлкните правой кнопкой мыши по папке `java-runtime-gamma` → **Свойства** → **Безопасность**.
-2. Нажмите **Изменить**.
-3. Для каждой группы (например, *Users*, *Administrators*) установите флажок **Запретить** в строке **Запись (Write)**.
-4. Нажмите **Применить** → **OK**.
-
-Это эквивалент команды `chmod 0555` в среде Windows.
+> ✅ This protects your Java from accidental modification or deletion.
 
 ---
 
-## 6. Проверка работы
+## 5. Alternative Method (Windows, without WSL)
 
-После выполнения шагов убедитесь, что:
+If you are on **Windows 10/11** and not using WSL, you can apply similar restrictions via NTFS properties:
 
-* структура папки `java-runtime-gamma` корректна;
-* присутствуют все необходимые исполняемые файлы (`java`, `javac` и др.);
-* права доступа установлены правильно.
+1. Right-click the `java-runtime-gamma` folder → **Properties** → **Security**.
+2. Click **Edit**.
+3. For each group (e.g., *Users*, *Administrators*), check **Deny** for the **Write** permission.
+4. Click **Apply** → **OK**.
 
-Теперь при сборке профиля для соответствующей платформы (в примере — `windows-x64`) будет использоваться именно ваша версия Java.
-
----
-
-## 7. Примечание для других платформ
-
-Если вы собираете профиль под другую ОС:
-
-* просто замените `windows-x64` в путях на нужный каталог, например:
-
-  * `linux`
-  * `linux-i386`
-  * `mac-os`
-  * `mac-os-arm64`
+This is equivalent to `chmod 0555` on Windows.
 
 ---
 
-## ✅ Результат
+## 6. Verify the Setup
 
-После выполнения инструкции:
+After completing the steps, ensure that:
 
-* GML Backend будет использовать вашу собственную Java при сборке профиля;
-* версия Java полностью контролируется вами;
-* исключается влияние стандартного окружения или встроенных рантаймов.
+* The `java-runtime-gamma` folder structure is correct.
+* All necessary executables (`java`, `javac`, etc.) are present.
+* Permissions are set properly.
+
+Now, when building a profile for the corresponding platform (in this example — `windows-x64`), your custom Java version will be used.
+
+---
+
+## 7. Note for Other Platforms
+
+If you are building a profile for a different OS:
+
+* Simply replace `windows-x64` in the paths with the appropriate folder, for example:
+
+    * `linux`
+    * `linux-i386`
+    * `mac-os`
+    * `mac-os-arm64`
+
+---
+
+## ✅ Outcome
+
+After completing this guide:
+
+* GML Backend will use your custom Java when building profiles.
+* The Java version is fully under your control.
+* Standard environment or bundled runtimes will not interfere.

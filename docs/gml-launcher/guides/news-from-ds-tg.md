@@ -1,24 +1,24 @@
 ---
-sidebar_position: 3
+
+## sidebar_position: 3
+
+# Discord and Telegram News in the Launcher
+
+This guide describes the process of setting up an integration to display news from your **Discord server** or **Telegram channel** in the GML launcher.
+
 ---
 
-# Новости из Discord и Telegram в лаунчере
+## 1. Environment Preparation
 
-Данное руководство описывает процесс настройки интеграции, позволяющей отображать новости из вашего **Discord-сервера** или **Telegram-канала** в лаунчере GML.
+All steps are performed on your **VPS server** (VDS), where the integration service will be hosted.
 
----
-
-## 1. Подготовка окружения
-
-Все действия выполняются на вашем **VPS-сервере** (VDS), где будет размещаться сервис интеграции.
-
-Подключитесь к серверу по SSH и выполните клонирование репозитория:
+Connect to your server via SSH and clone the repository:
 
 ```bash
 git clone https://github.com/Niobrix/gml-custom-news.git
 ```
 
-После загрузки перейдите в директорию проекта:
+After downloading, navigate to the project directory:
 
 ```bash
 cd gml-custom-news
@@ -26,94 +26,94 @@ cd gml-custom-news
 
 ---
 
-## 2. Настройка переменных окружения
+## 2. Setting Environment Variables
 
-Откройте файл `.env.example` любым удобным способом — через **SFTP** (например, в Notepad++) или прямо в терминале (через `nano`, `vim`, `micro` и т.п.).
+Open the `.env.example` file using any convenient method — via **SFTP** (e.g., Notepad++) or directly in the terminal (`nano`, `vim`, `micro`, etc.).
 
-### Заполните следующие переменные:
+### Fill in the following variables:
 
-| Переменная          | Описание                                                                                                                                                                                       |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DISCORD_BOT_TOKEN` | Токен Discord-бота, который имеет доступ к каналу с новостями. Добавьте бота на сервер с правами администратора. [Документация Discord Developers](https://discord.com/developers/docs/intro). |
-| `CHANNEL_ID`        | ID канала, из которого будут считываться сообщения. [Как получить ID канала](https://support.discord.com/hc/ru/articles/206346498).                                                            |
-| `PORT`              | Порт, на котором будет запущено приложение интеграции. По умолчанию используется `3000`.                                                                                                       |
+| Variable            | Description                                                                                                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `DISCORD_BOT_TOKEN` | Discord bot token with access to the news channel. Add the bot to the server with administrator permissions. [Discord Developers Documentation](https://discord.com/developers/docs/intro). |
+| `CHANNEL_ID`        | ID of the channel from which messages will be read. [How to get a channel ID](https://support.discord.com/hc/ru/articles/206346498).                                                        |
+| `PORT`              | Port on which the integration application will run. Default is `3000`.                                                                                                                      |
 
-> ⚠️ Остальные переменные изменять не рекомендуется, если вы не уверены в их назначении.
+> ⚠️ It is not recommended to change other variables unless you are sure of their purpose.
 
-После внесения изменений сохраните файл под именем **`.env`** (удалите суффикс `.example`).
+After making changes, save the file as **`.env`** (remove the `.example` suffix).
 
 ---
 
-## 3. Запуск приложения через Docker
+## 3. Running the Application via Docker
 
-В той же директории выполните команду:
+In the same directory, run:
 
 ```bash
 docker compose up -d --build
 ```
 
-После завершения сборки приложение будет доступно по адресу:
+After the build completes, the application will be accessible at:
 
 ```
-http://{IP_сервера}:{PORT}
+http://{SERVER_IP}:{PORT}
 ```
 
 ---
 
-## 4. Настройка проксирования и HTTPS
+## 4. Configuring Proxy and HTTPS
 
-Для корректной работы рекомендуется настроить **домен** и **SSL-сертификат**.
+For proper operation, it is recommended to set up a **domain** and **SSL certificate**.
 
-1. Настройте поддомен, который будет проксировать запросы к вашему приложению.
+1. Configure a subdomain to proxy requests to your application.
 
-2. Установите Nginx и Certbot:
+2. Install Nginx and Certbot:
 
    ```bash
    sudo apt install -y nginx certbot python3-certbot-nginx
    ```
 
-3. Создайте конфигурацию Nginx по примеру:
-   👉 [Пример конфига Nginx (Gist)](https://gist.github.com/yakoshiq/5b6aa80133fef30f8dc44f7e3cb37ec6)
+3. Create an Nginx configuration using the example:
+   👉 [Nginx config example (Gist)](https://gist.github.com/yakoshiq/5b6aa80133fef30f8dc44f7e3cb37ec6)
 
-4. Выполните команду для получения SSL-сертификата:
+4. Obtain an SSL certificate:
 
    ```bash
    certbot --nginx
    ```
 
-После успешной настройки приложение будет доступно по защищённому адресу:
+After successful setup, the application will be available at a secure address:
 
 ```
-https://{ваш_домен}/discord/messages
-```
-
----
-
-## 5. Подключение интеграции в панели GML
-
-Ссылку на ваш эндпоинт (`https://{ваш_домен}/discord/messages`) вставьте в настройках **панели лаунчера** в разделе:
-
-```
-Интеграции → Социальные сети → Custom
+https://{your_domain}/discord/messages
 ```
 
 ---
 
-## 6. Дополнительная информация
+## 5. Connecting the Integration in the GML Panel
 
-* 🔄 **Кэширование:** данные кэшируются как на стороне интеграции, так и на стороне GML. Если Discord API временно недоступен, последние новости продолжат отображаться.
-* 🕒 **Частота обновления:** новости из Telegram обновляются примерно раз в 15 минут.
-* 🧩 **Telegram-интеграция:** реализована возможность получать новости из Telegram-каналов без использования бота.
-* 🧾 **Заголовок новости:** определяется первой строкой сообщения (до нажатия Enter).
-* 🔁 **Обновление:** в репозитории доступен shell-скрипт для автоматического обновления. См. инструкцию в [README на GitHub](https://github.com/Niobrix/gml-custom-news).
+Insert the link to your endpoint (`https://{your_domain}/discord/messages`) in the **launcher panel** settings under:
+
+```
+Integrations → Social Media → Custom
+```
 
 ---
 
-## 7. Итог
+## 6. Additional Information
 
-После выполнения всех шагов вы получите:
+* 🔄 **Caching:** data is cached both on the integration side and in GML. If the Discord API is temporarily unavailable, the latest news will continue to display.
+* 🕒 **Update Frequency:** news from Telegram is updated approximately every 15 minutes.
+* 🧩 **Telegram Integration:** allows fetching news from Telegram channels without using a bot.
+* 🧾 **News Title:** determined by the first line of the message (before pressing Enter).
+* 🔁 **Updates:** a shell script for automatic updates is available in the repository. See instructions in the [GitHub README](https://github.com/Niobrix/gml-custom-news).
 
-✅ Автоматический импорт новостей из Discord и/или Telegram
-✅ Безопасное HTTPS-соединение
-✅ Простое управление через панель лаунчера
-✅ Кэширование данных для стабильной работы
+---
+
+## 7. Summary
+
+After completing all steps, you will have:
+
+✅ Automatic import of news from Discord and/or Telegram
+✅ Secure HTTPS connection
+✅ Easy management via the launcher panel
+✅ Data caching for stable operation

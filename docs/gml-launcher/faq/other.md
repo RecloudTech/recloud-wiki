@@ -3,21 +3,19 @@ sidebar_position: 2
 id: other
 ---
 
-# Дополнительно
+# Additional
 
-## Проверка доступности API
+## Checking API Availability
 
-Чтобы проверить, что запросы отправляются на нужный адрес и есть ответ от сервера с помощью панели для программистов (
-Developer Tools) в браузере, следуйте этим шагам:
+To verify that requests are sent to the correct address and that the server responds, you can use the browser's Developer Tools. Follow these steps:
 
-1. Откройте ваш браузер (например, Google Chrome или Firefox).
-2. Нажмите **F12** или правой кнопкой мыши на странице и выберите **Inspect** или **Inspect Element**.
-3. Перейдите на вкладку **Network**.
-4. Выполните действие на странице, которое должно отправить запрос к API.
-5. В вкладке Network вы увидите список запросов. Найдите ваш запрос в списке и удостоверьтесь, что в столбце **Name**
-   указан нужный адрес.
-6. Кликните на этот запрос, и внизу панели вы увидите подробную информацию по этому запросу:
-    - **Headers**: Проверьте, что **Request URL** совпадает с ожидаемым адресом.
-    - **Response**: Убедитесь, что получен правильный ответ от сервера.
+1. Open your browser (e.g., Google Chrome or Firefox).
+2. Press **F12** or right-click on the page and select **Inspect** or **Inspect Element**.
+3. Go to the **Network** tab.
+4. Perform an action on the page that should send a request to the API.
+5. In the Network tab, you will see a list of requests. Find your request and ensure that the **Name** column shows the correct address.
+6. Click on the request, and at the bottom panel you will see detailed information about it:
+    - **Headers**: Verify that the **Request URL** matches the expected address.
+    - **Response**: Ensure the server returned the correct response.
 
-Следуя этим шагам, вы сможете убедиться, что ваши запросы отправляются на правильный адрес и что сервер отвечает на них.
+By following these steps, you can confirm that your requests are sent to the correct endpoint and that the server is responding properly.
