@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Загрузка профиля
+# Loading a Profile
 
-1. Перейдите в список профилей
-2. Нажмите на карандашик, дял перехода к настройкам профиля
-3. Нажмите кнопку "Загрузить".
-4. По окончанию загрузки вы получите сообщение о завершении операции.
+1. Go to the profile list.
+2. Click the pencil icon to open the profile settings.
+3. Click the "Load" button.
+4. After the loading is complete, you will receive a message confirming the operation has finished.

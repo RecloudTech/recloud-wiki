@@ -2,28 +2,23 @@
 sidebar_position: 4
 ---
 
-# Опции запуска
+# Launch Options
 
-Страница описывает настройку запускаемых аргументов JVM для игрового профиля с использованием предустановленных
-параметров и конфигурации Authlib Injector.
+This page describes configuring JVM launch arguments for a game profile using preconfigured parameters and Authlib Injector settings.
 
-## JVM Аргументы Authlib Injector
+## JVM Arguments for Authlib Injector
 
-В игровом профиле есть возможность указать свои собственные JVM аргументы, а так же прочие предустановленные в
-библиотеках и клиенте
+In the game profile, you can specify your own JVM arguments, as well as others preconfigured in the libraries and client.
 
-| JVM Аргумент                         | Описание                                                                                                          | Доступные значения                                                                                                                                              |
-|--------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -Dauthlibinjector.mojangNamespace    | Следует ли включать пространство имен Mojang (суффикс @mojang).                                                   | default, enabled, disabled                                                                                                                                      |
-| -Dauthlibinjector.legacySkinPolyfill | Использование устаревший API системы скинов, а именно:<br/> ```GET``` ```/skins/MinecraftSkins/{username}.png```. | default, enabled, disabled                                                                                                                                      |
-| -Dauthlibinjector.debug              | Включение Debug режима Authlib Injector                                                                           | verbose(Подробный журнал)<br/>authlib (Журнал Mojang authlib)<br/>dumpClass (Вывод данных измененных классов)<br/>printUntransformed (Вывод неизменных классов) |
-| -Dauthlibinjector.disableHttpd       | Отключение Mojang namespace и поддержки старых API для получения текстур                                          |                                                                                                                                                                 |
-| -Dauthlibinjector.noShowServerName   | Отключение отображения имени сервера аутентификации на экране меню Minecraft.                                     |                                                                                                                                                                 |
+| JVM Argument                         | Description                                                                                      | Available Values                                                                                                                                         |
+|--------------------------------------|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -Dauthlibinjector.mojangNamespace    | Whether to enable the Mojang namespace (suffix @mojang).                                         | default, enabled, disabled                                                                                                                               |
+| -Dauthlibinjector.legacySkinPolyfill | Use the legacy skin API, specifically:<br/>```GET``` ```/skins/MinecraftSkins/{username}.png```. | default, enabled, disabled                                                                                                                               |
+| -Dauthlibinjector.debug              | Enable Authlib Injector debug mode                                                               | verbose (Detailed log)<br/>authlib (Mojang authlib log)<br/>dumpClass (Output of modified classes)<br/>printUntransformed (Output of unmodified classes) |
+| -Dauthlibinjector.disableHttpd       | Disable Mojang namespace and legacy API support for fetching textures                            |                                                                                                                                                          |
+| -Dauthlibinjector.noShowServerName   | Disable displaying the authentication server name on the Minecraft menu screen                   |                                                                                                                                                          |
 
-| Игровые аргументы                  | Описание                                                                                          | Описание       |
-|------------------------------------|---------------------------------------------------------------------------------------------------|----------------|
-| --server [ip] --port [port]        | Автоматическое подключение к серверу при запуске игры. Устаревший метод.                          | 1.7.2 - 1.19.4 |
-| --quickPlayMultiplayer [ip]:[port] | Автоматическое подключение к серверу при запуске игры. Новый метод, заменяющий --server и --port. | 1.20 и выше    |
-
-
-
+| Game Arguments                     | Description                                                                                 | Applicable Versions |
+|------------------------------------|---------------------------------------------------------------------------------------------|---------------------|
+| --server [ip] --port [port]        | Automatically connect to a server on game launch. Legacy method.                            | 1.7.2 - 1.19.4      |
+| --quickPlayMultiplayer [ip]:[port] | Automatically connect to a server on game launch. New method replacing --server and --port. | 1.20 and above      |
