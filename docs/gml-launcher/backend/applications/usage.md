@@ -2,69 +2,20 @@
 sidebar_position: 10
 ---
 
-# Использование приложения
+# Using the Application
 
-После создания внешнего приложения вы получаете **токен доступа**, который используется для аутентификации при обращении к **Gml Backend API**.
-С помощью этого токена приложение может выполнять разрешённые действия — например, управлять профилями, сборками, игроками или серверами.
+After creating an external application, you receive an **access token**, which is used for authentication when interacting with the **Gml Backend API**.  
+With this token, the application can perform authorized actions, such as managing profiles, builds, players, or servers.
 
 ---
 
-## Авторизация
+## Authorization
 
-Каждое внешнее приложение взаимодействует с API через **Bearer Token**.
-Токен необходимо указывать в заголовке `Authorization` каждого запроса.
+Each external application interacts with the API using a **Bearer Token**.  
+The token must be included in the `Authorization` header of each request.
 
-**Пример запроса:**
+**Example request:**
 
 ```bash
 curl -X GET https://api.gml.dev/v1/profiles \
-  -H "Authorization: Bearer <ВАШ_ТОКЕН>"
-````
-
-Если токен корректен и у приложения есть необходимые права, API вернёт запрошенные данные.
-В противном случае сервер ответит с кодом ошибки `401 Unauthorized` или `403 Forbidden`.
-
----
-
-## Пример интеграции (JavaScript)
-
-```js
-const axios = require("axios");
-
-const API_URL = "https://gmlf.recloud.tech/api/v1/profiles";
-const TOKEN = "ВАШ_ТОКЕН_ПРИЛОЖЕНИЯ";
-
-async function fetchProfiles() {
-  try {
-    const response = await axios.get(API_URL, {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-      },
-    });
-
-    console.log("Список профилей:", response.data);
-  } catch (error) {
-    console.error("Ошибка при получении профилей:", error.response?.data || error.message);
-  }
-}
-
-fetchProfiles();
-```
-
----
-
-## Советы по безопасности
-
-* **Храните токен в защищённом месте.** Не храните его в публичных репозиториях или открытых файлах.
-* **Не передавайте токен клиентской стороне (браузеру).** Используйте его только на сервере или в доверенной среде.
-* **При утечке токена** — удалите приложение и создайте новое, чтобы сгенерировать новый токен.
-
----
-
-## Ошибки авторизации
-
-| Код                     | Сообщение                                | Описание                                           |
-|-------------------------|------------------------------------------|----------------------------------------------------|
-| `401 Unauthorized`      | Недействительный или отсутствующий токен | Проверьте, передаётся ли заголовок `Authorization` |
-| `403 Forbidden`         | Недостаточно прав                        | Проверьте, что у приложения есть нужные разрешения |
-| `429 Too Many Requests` | Превышен лимит запросов                  | Подождите некоторое время и повторите попытку      |
+  -H "Authorization: Bearer <YOUR_TOKEN>"

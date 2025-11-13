@@ -2,24 +2,23 @@
 sidebar_position: 3
 ---
 
-# Авторизация
+# Authentication
 
-На данной странице приведены различные типы авторизации, которые поддерживает Gml.Backend. 
-Вы сможете найти краткое описание и ссылки на официальные ресурсы для каждого типа авторизации.
+This page describes the different types of authentication supported by Gml.Backend.  
+You will find a brief description and links to official resources for each type of authentication.
 
+#### Predefined Types
 
-#### Предустановленные типы
+Currently, Gml Backend supports several predefined authentication types:
 
-На данный момент Gml Backend поддерживает несколько типов предустановленных типов авторизации:
+| Authentication Type   | Description                                                                                                                                                                                                      |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Undefined             | **Not allowed** for any launcher-side authentication                                                                                                                                                             |
+| Any                   | **Allowed** for any launcher-side authentication                                                                                                                                                                 |
+| DataLifeEngine        | Authorization script for CMS <br/>[DataLifeEngine](https://dle-news.ru)                                                                                                                                          |
+| Azuriom               | Authentication via CMS <br/>[Azuriom](https://github.com/Azuriom/Azuriom) <br/> **UUID generation must be adjusted. <br/>Process is described on [this page](/docs/gml-launcher/backend/authorization/azuriom).* |
+| EasyCabinet           | Authentication via user cabinet system <br/>[Aurora EasyCabinet](https://github.com/AuroraTeam/EasyCabinet)                                                                                                      |
+| UnicoreCMS            | Authentication via UnicoreCMS system                                                                                                                                                                             |
+| Custom Authentication | Authentication that you can configure yourself for your API                                                                                                                                                      |
 
-| Тип авторизации         | Описание                                                                                                                                                                                                              |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Undefined               | **Запрещена** на любую авторизацию со стороны лаунчера                                                                                                                                                                |
-| Any                     | **Разрешена** любая авторизация со стороны лаунчера                                                                                                                                                                   |
-| DataLifeEngine          | Скрипт авторизации для CMS <br/>[DataLifeEngine](https://dle-news.ru)                                                                                                                                                 |
-| Azuriom                 | Авторизация через CMS <br/>[Azuriom](https://github.com/Azuriom/Azuriom) <br/> **необходимо корректировать генерацию UUID. <br/>Процесс описан на [этой странице](/docs/gml-launcher/backend/authorization/azuriom).* |
-| EasyCabinet             | Авторизация через систему личного кабинета <br/>[Aurora EasyCabinet](https://github.com/AuroraTeam/EasyCabinet)                                                                                                       |
-| UnicoreCMS              | Авторизация через CMS систему UnicoreCMS                                                                                                                                                                              |
-| Собственная авторизация | Авторизация, которую вы можете настроить для своего Api самостоятельно                                                                                                                                                |
-
-Прочитать подробнее про собственную авторизацию можете на [этой странице](/docs/gml-launcher/backend/authorization/custom).
+You can read more about custom authentication on [this page](/docs/gml-launcher/backend/authorization/custom).

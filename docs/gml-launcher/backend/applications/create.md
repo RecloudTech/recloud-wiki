@@ -2,53 +2,53 @@
 sidebar_position: 9
 ---
 
-# Создание внешнего приложения
+# Creating an External Application
 
-Внешние приложения позволяют интегрировать сторонние системы с **Gml Backend** и использовать возможности REST API для управления игровыми данными, профилями и серверами.
+External applications allow you to integrate third-party systems with **Gml Backend** and use the REST API to manage game data, profiles, and servers.
 
-## Как создать приложение
+## How to Create an Application
 
-1. **Откройте раздел**
-   Перейдите в **Настройки → Приложения**.
+1. **Open the Section**  
+   Go to **Settings → Applications**.
 
-   ![Список приложений](/img/gml_app_create_1.png)
+   ![Application List](/img/gml_app_create_1.png)
 
-2. **Нажмите кнопку** `Создать приложение`.
-   Откроется окно создания нового приложения.
+2. **Click the** `Create Application` **button**.  
+   A window for creating a new application will open.
 
-   ![Список приложений](/img/gml_app_create_2.png)
+   ![Application List](/img/gml_app_create_2.png)
 
-3. **Введите название приложения.**
-   Укажите произвольное имя, по которому вы сможете идентифицировать интеграцию.
-   Например: `GmlCraft`, `LauncherUpdater` или `DiscordBot`.
+3. **Enter the Application Name**  
+   Provide a name to identify your integration.  
+   For example: `GmlCraft`, `LauncherUpdater`, or `DiscordBot`.
 
-4. **Выберите права доступа.**
-   Права определяют, какие действия приложение сможет выполнять через API —
-   например, управление профилями, пользователями или сборками лаунчера.
+4. **Select Access Permissions**  
+   Permissions determine what actions the application can perform via the API —  
+   for example, managing profiles, users, or launcher builds.
 
-5. **Нажмите** `Создать`.
-   После этого приложение будет добавлено в список, а система покажет токен доступа.
+5. **Click** `Create`.  
+   The application will be added to the list, and the system will display an access token.
 
-   ![Список приложений](/img/gml_app_create_3.png)
+   ![Application List](/img/gml_app_create_3.png)
 
-6. **Сохраните токен приложения.**
-   Токен отображается **только один раз**.
-   Сохраните его в безопасном месте — он используется для авторизации при работе с API.
-
----
-
-## Важно
-
-- Потерянный токен нельзя восстановить — создайте новое приложение при необходимости.
-- Передайте токен только доверенным системам.
-- Каждое приложение имеет собственный набор прав, ограничивающих доступ к данным.
+6. **Save the Application Token**  
+   The token is shown **only once**.  
+   Save it in a secure location — it is required for API authorization.
 
 ---
 
-## Пример использования токена
+## Important
 
-После создания приложения можно обращаться к API Gml Backend, указывая токен в заголовке запроса:
+- A lost token cannot be recovered — create a new application if necessary.
+- Only share the token with trusted systems.
+- Each application has its own set of permissions limiting data access.
+
+---
+
+## Example of Using the Token
+
+After creating the application, you can access the Gml Backend API by including the token in the request header:
 
 ```bash
 curl -X GET https://api.gml.dev/v1/profiles \
-  -H "Authorization: Bearer <ВАШ_ТОКЕН>"
+  -H "Authorization: Bearer <YOUR_TOKEN>"

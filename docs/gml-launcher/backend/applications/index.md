@@ -2,14 +2,14 @@
 sidebar_position: 8
 ---
 
-# Внешние приложения
+# External Applications
 
-Система внешних приложений предназначена для интеграции с внутренней функциональностью **Gml Backend** и взаимодействия через **REST API**.
+The external applications system is designed to integrate with the internal functionality of **Gml Backend** and interact via **REST API**.
 
-Благодаря этому внешние приложения могут автоматизировать следующие процессы:
+This allows external applications to automate the following processes:
 
-* Создание, редактирование и удаление игровых профилей
-* Управление сборками и обновлениями лаунчера
-* Интеграцию с WebSocket
-* Управление игроками
-* Управление игровыми серверами
+* Creating, editing, and deleting game profiles
+* Managing launcher builds and updates
+* WebSocket integration
+* Managing players
+* Managing game servers

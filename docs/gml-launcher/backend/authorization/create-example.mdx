@@ -1,27 +1,27 @@
 ---
 id: custom
-title: Собственная авторизация
+title: Custom Authentication
 sidebar_position: 1
 ---
 import CustomAuthScheme from '/img/integrations-auth-custom-1.png';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Для разработки собственной авторизации необходимо понимание процесса авторизации,
-ниже представлен процесс от входа лаунчера, до ответа на вашем сайте
+To develop custom authentication, you need to understand the authentication process.
+Below is the workflow from the launcher login to the response on your website.
 
-## Как работает авторизация?
+## How Authentication Works
 
-1. Пользователь вводит логин и пароль в лаунчере
-2. Лаунчер отправляет запрос на ваш сервер авторизации
-3. Сервер проверяет учетные данные и отправляет ответ
-4. Лаунчер обрабатывает ответ и предоставляет или отказывает в доступе
+1. The user enters their username and password in the launcher.
+2. The launcher sends a request to your authentication server.
+3. The server verifies the credentials and sends a response.
+4. The launcher processes the response and grants or denies access.
 
 <p><img className="image-zoom-medium" src={CustomAuthScheme} alt=""/></p>
 
-На фото представлены 4 этапа отправки уведомления. Вот описание всех 4:
+The image shows 4 stages of request flow. Here is the description of all 4:
 
-1. Запрос от лаунчера к Gml.Backend
+1. Request from the launcher to Gml.Backend
 
 <Tabs>
     <TabItem value="curl" label="Curl" default>
@@ -31,20 +31,20 @@ import TabItem from '@theme/TabItem';
         --location 'http://localhost:5003/api/v1/integrations/auth/signin' \
         --header 'Content-Type: application/json' \
         --data '{
-        "Login": "ЛОГИН",
-        "Password": "ПАРОЛЬ",
-        "2FACode": "КОД_2FA"
+        "Login": "USERNAME",
+        "Password": "PASSWORD",
+        "2FACode": "2FA_CODE"
     }'
         ```
     </TabItem>
     <TabItem value="javascript" label="JavaScript">
-        ```
+        ```javascript
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify({
-        "Login": "ЛОГИН",
-        "Password": "ПАРОЛЬ",
-        "2FACode": "КОД_2FA"
+        "Login": "USERNAME",
+        "Password": "PASSWORD",
+        "2FACode": "2FA_CODE"
     });
         const requestOptions = {
         method: "POST",
@@ -60,17 +60,17 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 </Tabs>
 
-2. Gml.Backend - Ваш сайт
+2. Gml.Backend → Your Website
 
 <Tabs>
     <TabItem value="curl" label="Curl" default>
         ```curl
-        curl --location 'http://ВАШ_АДРЕС' \
+        curl --location 'http://YOUR_ADDRESS' \
         --header 'Content-Type: application/json' \
         --data '{
-        "Login": "ЛОГИН",
-        "Password": "ПАРОЛЬ",
-        "Totp": "КОД_2FA"
+        "Login": "USERNAME",
+        "Password": "PASSWORD",
+        "Totp": "2FA_CODE"
     }'
         ```
     </TabItem>
@@ -79,9 +79,9 @@ import TabItem from '@theme/TabItem';
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify({
-        "Login": "ЛОГИН",
-        "Password": "ПАРОЛЬ",
-        "Totp": "КОД_2FA"
+        "Login": "USERNAME",
+        "Password": "PASSWORD",
+        "Totp": "2FA_CODE"
     });
         const requestOptions = {
         method: "POST",
@@ -89,70 +89,67 @@ import TabItem from '@theme/TabItem';
         body: raw,
         redirect: "follow"
     };
-        fetch("http://ВАШ_АДРЕС", requestOptions)
+        fetch("http://YOUR_ADDRESS", requestOptions)
         .then((response) => response.text())
         .then((result) => console.log(result))
         .catch((error) => console.error(error));
         ```
     </TabItem>
-    <TabItem value="response" label="Пример вашего ответа">
-        `200` - Успешная авторизация *
+    <TabItem value="response" label="Example Response">
+        `200` - Successful authentication *
         ```json
         {
             "Login": "GamerVII",
             "UserUuid": "c07a9841-2275-4ba0-8f1c-2e1599a1f22f",
             "IsSlim": true,
-            "Message": "Успешная авторизация"
+            "Message": "Authentication successful"
         }
         ```
 
-        `401` - Ошибка аутентификации *
+        `401` - Authentication error *
         ```json
         {
-            "Message": "Неверный логин или пароль"
+            "Message": "Invalid username or password"
         }
         ```
 
-        `401` - Ошибка аутентификации, нужен ввод 2FA **
+        `401` - Authentication error, 2FA required **
         ```json
         {
-            "Message": "Введите проверочный код 2FA"
+            "Message": "Enter 2FA verification code"
         }
         ```
 
-        `404` - Пользователь не найден
+        `404` - User not found
         ```json
         {
-            "Message": "Пользователь не найден"
+            "Message": "User not found"
         }
         ```
 
-        `403` - Пользователь не имеет доступа или заблокирован
+        `403` - User blocked or no access
         ```json
         {
-            "Message": "Пользователь заблокирован. Причина: Раздача на спавне"
+            "Message": "User is blocked. Reason: Spawn giveaway"
         }
         ```
 
-        \* Обратите внимание, что не обязательно заполнять тело ответа, достаточно вернуть StatusCode (Обязательно)
-        Поля `Message` и `UserUuid` будут сгенерированы автоматически.
+        \* Note: It is not mandatory to return a body, returning the StatusCode is enough (Required).
+        The `Message` and `UserUuid` fields are generated automatically.
 
-        Ендпоинты **200** и **401** необходимо реализовать ***Обязательно***
+        Endpoints **200** and **401** must be implemented ***Mandatory***.
 
-        ** В случае, если вы хотите проверять коды двухфакторной атентификации наличие сообщения "Введите проверочный
-        код 2FA" — ***Обязательно***
+        ** If you want to check two-factor authentication codes, the "Enter 2FA verification code" message is ***Required***.
     </TabItem>
 </Tabs>
 
-### Собственная авторизация
+### Custom Authentication
 
-Есть возможность реализовать свою, кастомную авторизацию через Endpoint.
-Для этого нужно на стороне вашего сервиса реализовать [Endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints)
+You can implement your own custom authentication via an Endpoint.
+You need to implement a [Web API Endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints) on your service.
 
-1. Выберите в панель управление раздел:
-`Интеграции` -> `Аутентификация` -> `Аутентификация` -> `Собственная аутентификация`
-2. Вставьте ссылку на реализованный endoint авторизации `Gml.Backend - Ваш сайт`
+1. Go to the control panel:
+`Integrations` → `Authentication` → `Authentication` → `Custom Authentication`
+2. Paste the URL of your implemented authentication endpoint (Gml.Backend → Your Website).
 
-> **Важно!** Примеры реализации можете посмотреть [на странице Github](https://github.com/GamerVII-NET/Gml.Modules.Auth)
-
-
+> **Important:** Example implementations can be found on [GitHub](https://github.com/GamerVII-NET/Gml.Modules.Auth)

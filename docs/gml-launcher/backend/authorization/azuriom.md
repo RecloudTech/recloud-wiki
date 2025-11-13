@@ -1,9 +1,9 @@
 # Azuriom
 
-Так как Gml эмитирует полную работу лицензионной версии игры, а
-Azuriom генерирует неверные UUID для пользователей, то необходимо произвести некоторые действия:
+Since Gml emulates the full functionality of the licensed version of the game, and  
+Azuriom generates incorrect UUIDs for users, some adjustments are required:
 
-- Откройте файл ```/папка_с_сайтом/app/Games/Minecraft/MinecraftOfflineGame.php```, и найдите в нем следующий код:
+- Open the file ```/your_site_folder/app/Games/Minecraft/MinecraftOfflineGame.php``` and locate the following code:
 
 ```php
 public function getUserUniqueId(string $name): ?string
@@ -18,14 +18,8 @@ public function getUserUniqueId(string $name): ?string
         });
         $uuid = $factory->uuid3(Uuid::NIL, 'OfflinePlayer:'.$name)->toString();
 
-        return Str::remove('-', $uuid);  // < --- Вот эту строчку
+        return Str::remove('-', $uuid);  // < --- This line
     }
-```
+````
 
-- Замените ```return Str::remove('-', $uuid);``` на ```return $uuid;```.
-
-:::warning
-После этой процедуры необходимо пересоздать все уже имеющиеся аккаунты, чтобы сгенерировались новые и
-корректные UUID.
-Для этого необходимо удалить аккаунты пользователей.
-:::
+* Replace `return Str::remove('-', $uuid);` with `return $uuid;`.
