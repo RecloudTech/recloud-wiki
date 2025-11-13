@@ -1,11 +1,7 @@
 ---
-
-## sidebar_position: 3
-
-# Discord and Telegram News in the Launcher
-
-This guide describes the process of setting up an integration to display news from your **Discord server** or **Telegram channel** in the GML launcher.
-
+sidebar_position: 3
+title: Discord and Telegram News in the Launcher
+description: This guide describes the process of setting up an integration to display news from your Discord server or Telegram channel in the GML launcher.
 ---
 
 ## 1. Environment Preparation
