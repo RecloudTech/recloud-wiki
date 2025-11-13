@@ -1,9 +1,7 @@
-# Пример настройки
+# Example Setup
 
-В этом разделе рассмотрены различные способы запуска игрового сервера Minecraft, включая использование панели управления
-**Pterodactyl**, запуск на операционной системе без дополнительного ПО, а также настройку сервера в **Docker**.
+This section covers various ways to run a Minecraft game server, including using the **Pterodactyl** control panel, running on an operating system without additional software, and setting up the server in **Docker**.
 
 ---
 
-[Запуск сервера в Docker](servers-minecraft-docker.md)
-
+[Running a Server in Docker](servers-minecraft-docker.md)

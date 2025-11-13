@@ -1,22 +1,21 @@
-# Запуск в Linux
+# Running on Linux
 
-### 1. Установка JDK
+### 1. Install JDK
 
-Скачайте и установите **Java 17** или более новую версию.
+Download and install **Java 17** or a newer version.
 
-### 2. Загрузка ядра сервера
+### 2. Download the Server Core
 
-Скачайте серверное ядро, например, [PAPER 1.20.4](https://papermc.io/downloads).
+Download the server core, for example, [PAPER 1.20.4](https://papermc.io/downloads).
 
-### 3. Настройка authlib injector
+### 3. Configure Authlib Injector
 
-1. Скачайте
-   [authlib-injector](https://github.com/Gml-Launcher/Gml.Authlib.Injector/releases/tag/authlib-injector-1.2.5-alpha-1)
-2. Поместите его в папку с сервером.
+1. Download [authlib-injector](https://github.com/Gml-Launcher/Gml.Authlib.Injector/releases/tag/authlib-injector-1.2.5-alpha-1)  
+2. Place it in the server folder.
 
-### 4. Запуск сервера
+### 4. Start the Server
 
-Создайте файл `start.bat` (для Windows) или `start.sh` (для Linux/MacOS) с таким содержимым:
+Create a file `start.bat` (for Windows) or `start.sh` (for Linux/MacOS) with the following content:
 
 #### Windows (start.bat)
 
@@ -24,7 +23,7 @@
 @echo off
 java -Xmx4G -Xms4G -javaagent:authlib-injector-1.2.5-alpha-1.jar=https://localhost:5003/api/v1/integrations/authlib/minecraft -jar paper-1.20.4.jar nogui
 pause
-```
+````
 
 #### Linux/MacOS (start.sh)
 
@@ -33,20 +32,19 @@ pause
 java -Xmx4G -Xms4G -javaagent:authlib-injector-1.2.5-alpha-1.jar=https://localhost:5003/api/v1/integrations/authlib/minecraft -jar paper-1.20.4.jar nogui
 ```
 
-Не забудьте сделать скрипт исполняемым на Linux/MacOS:
+Make the script executable on Linux/MacOS:
 
 ```bash
 chmod +x start.sh
 ```
 
-Запустите скрипт. Сервер начнёт работать.
+Run the script. The server will start.
 
-> Важно!
-> Не оставляйте `localhost:5003`, если сервер будет использоваться другими игроками или развёрнут на удалённой машине!
-> В параметре `-javaagent` замените `https://localhost:5003/api/v1/integrations/authlib/minecraft` на адрес вашего API,
-> где развернута интеграция **authlib injector**.
+> Important!
+> Do not leave `localhost:5003` if the server will be used by other players or deployed on a remote machine!
+> In the `-javaagent` parameter, replace `https://localhost:5003/api/v1/integrations/authlib/minecraft` with the address of your API where the **authlib injector** integration is deployed.
 
-Если ваш сервер доступен по адресу `https://api.example.com`, то строка должна выглядеть следующим образом:
+If your server is available at `https://api.example.com`, the line should look like this:
 
 ```bash
 -javaagent:libraries/authlib-injector-1.2.5-alpha-1.jar=https://api.example.com/api/v1/integrations/authlib/minecraft -Dauthlibinjector.debug

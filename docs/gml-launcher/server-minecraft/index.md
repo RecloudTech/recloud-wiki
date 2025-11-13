@@ -2,6 +2,7 @@
 sidebar_position: 7
 ---
 
-# Сервер Minecraft
+# Minecraft Server
 
-Этот раздел поможет вам развернуть серверную инфраструктуру Gml.
+This section will help you deploy the Gml server infrastructure.
+```

@@ -1,61 +1,63 @@
-# Запуск в Pterodactyl
+# Running in Pterodactyl
 
-> **Примечание**: Поддержка протестирована на ограниченном количестве серверных ядер. Если вы успешно настроили сервер,
-> пожалуйста, сообщите об этом в [обсуждениях проекта](https://github.com/Gml-Launcher/Gml.Backend/discussions/80).
+> **Note**: Support has been tested on a limited number of server cores. If you successfully set up a server,
+> please report it in the [project discussions](https://github.com/Gml-Launcher/Gml.Backend/discussions/80).
 
-### Запуск игрового сервера Minecraft
+### Running a Minecraft Game Server
 
-В этом разделе рассмотрены различные способы запуска игрового сервера Minecraft, включая использование панели управления
-**Pterodactyl**, запуск на операционной системе без дополнительного ПО, а также настройку сервера в **Docker**.
+This section covers various ways to run a Minecraft game server, including using the **Pterodactyl** control panel, running on an operating system without additional software, and setting up the server in **Docker**.
 
 ---
 
-### 1. **Подготовка панели Pterodactyl**
+### 1. **Preparing the Pterodactyl Panel**
 
-- Убедитесь, что ваш сервер установлен и настроен в панели Pterodactyl.
-- Для настройки сервера в Pterodactyl вам понадобится:
-    - Доступ к панели управления.
-    - Предварительно установленная Pterodactyl.
-    - Добавленный узел (Node) и доступная конфигурация ресурсов (CPU, RAM, диск).
+* Make sure your server is installed and configured in the Pterodactyl panel.
+* To set up a server in Pterodactyl, you will need:
 
-### 2. **Создание нового сервера**
+    * Access to the control panel.
+    * Pterodactyl installed beforehand.
+    * A node added and available resource configuration (CPU, RAM, disk).
 
-1. Войдите в админ-панель Pterodactyl.
-2. Перейдите в раздел **Servers** и нажмите кнопку **Create Server**.
-3. Заполните основные параметры:
-    - Название сервера.
-    - Укажите узел и разметку ресурсов (CPU, RAM, диск).
-    - Установите Docker-образ (например, `itzg/minecraft-server` для Paper).
-    - Добавьте порты и выберите версию ядра Minecraft (например, Paper 1.20.4).
-4. В разделе **Startup** настройте переменные окружения:
-    - `TYPE` — выберите тип ядра (PAPER, SPIGOT и т.д.).
-    - `VERSION` — укажите версию ядра (например, 1.20.4).
-    - `EULA` — установите `TRUE` для принятия лицензионного соглашения.
-    - `MEMORY` — укажите объем памяти (например, 4G).
-    - Если требуется, добавьте параметр JVM для работы с Authlib Injector:
+### 2. **Creating a New Server**
+
+1. Log in to the Pterodactyl admin panel.
+2. Go to **Servers** and click **Create Server**.
+3. Fill in the basic parameters:
+
+    * Server name.
+    * Specify the node and resource allocation (CPU, RAM, disk).
+    * Set the Docker image (e.g., `itzg/minecraft-server` for Paper).
+    * Add ports and select the Minecraft server version (e.g., Paper 1.20.4).
+4. In the **Startup** section, configure environment variables:
+
+    * `TYPE` — select the server type (PAPER, SPIGOT, etc.).
+    * `VERSION` — specify the server version (e.g., 1.20.4).
+    * `EULA` — set to `TRUE` to accept the license agreement.
+    * `MEMORY` — specify the amount of RAM (e.g., 4G).
+    * If needed, add a JVM parameter for Authlib Injector:
+
       ```bash
       -javaagent:libraries/authlib-injector-1.2.5.jar=https://localhost:5003/api/v1/integrations/authlib/minecraft
-      ```  
-5. Нажмите **Create Server**.
+      ```
+5. Click **Create Server**.
 
-### 3. **Запуск сервера**
+### 3. **Starting the Server**
 
-После создания сервера выполните следующие шаги:
+After creating the server, follow these steps:
 
-1. В панели Pterodactyl выберите созданный сервер.
-2. Перейдите в раздел **Console**.
-3. Нажмите **Start** для запуска сервера.
-4. Дождитесь, пока сервер завершит начальную настройку.
+1. In the Pterodactyl panel, select the server you created.
+2. Go to the **Console** section.
+3. Click **Start** to launch the server.
+4. Wait for the server to complete the initial setup.
 
 ---
 
+> Important!
+> Do not leave `localhost:5003` if the server will be used by other players or deployed on a remote machine!
+> In the `-javaagent` parameter, replace `https://localhost:5003/api/v1/integrations/authlib/minecraft` with your API address,
+> where the **authlib injector** integration is deployed.
 
-> Важно!
-> Не оставляйте `localhost:5003`, если сервер будет использоваться другими игроками или развёрнут на удалённой машине!
-> В параметре `-javaagent` замените `https://localhost:5003/api/v1/integrations/authlib/minecraft` на адрес вашего API,
-> где развернута интеграция **authlib injector**.
-
-Если ваш сервер доступен по адресу `https://api.example.com`, то строка должна выглядеть следующим образом:
+If your server is accessible at `https://api.example.com`, the line should look like this:
 
 ```bash
 -javaagent:libraries/authlib-injector-1.2.5-alpha-1.jar=https://api.example.com/api/v1/integrations/authlib/minecraft -Dauthlibinjector.debug

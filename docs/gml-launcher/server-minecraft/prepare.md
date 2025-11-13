@@ -2,21 +2,20 @@
 sidebar_position: 2
 ---
 
-# Подготовка игрового сервера
+# Preparing the Game Server
 
-
-Gml.Backend и Gml.Launcher имеют нативную возможность обвязки с сервером через [authlib-injector](https://github.com/Gml-Launcher/Gml.Authlib.Injector).
+Gml.Backend and Gml.Launcher natively support integration with the server via [authlib-injector](https://github.com/Gml-Launcher/Gml.Authlib.Injector).
 
 :::warning
-Внимание! Gml.Backend используем форк данной библиотеки при создании. Настоятельно рекомендуем использовать именно эту версию
-Актуальная версия библиотеки: [Версия 1.2.5](https://github.com/Gml-Launcher/Gml.Authlib.Injector/releases/tag/authlib-injector-1.2.5-alpha-1)
+Attention! Gml.Backend uses a fork of this library during setup. We strongly recommend using this version.  
+Current library version: [Version 1.2.5](https://github.com/Gml-Launcher/Gml.Authlib.Injector/releases/tag/authlib-injector-1.2.5-alpha-1)
 :::
 
-## Системные требования
+## System Requirements
 
-На данный момент проект поддерживает все доступные серверные ядра, которые поддерживают javaagent через authlib
+Currently, the project supports all available server cores that support javaagent via authlib.
 
 :::note
-Обратите внимание! На данный момент проект тестировался на очень малельком количестве ядер и информация может быть не точной
-Если вы обладаете информацией по установке и успешности запуска игрового сервера, [напишите пожалуйста об этом тут](https://github.com/Gml-Launcher/Gml.Backend/discussions/80)
+Note! The project has been tested on a very limited number of server cores, so this information may not be fully accurate.  
+If you have experience with installation or successful server launch, [please share it here](https://github.com/Gml-Launcher/Gml.Backend/discussions/80)
 :::
