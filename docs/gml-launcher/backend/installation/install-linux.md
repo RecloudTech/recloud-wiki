@@ -4,78 +4,78 @@ sidebar_position: 1
 
 # GNU/Linux
 
-Это руководство поможет вам установить серверный компонент Gml.Backend на системы GNU/Linux. Установочный
-скрипт автоматически настроит все необходимые компоненты для вас.
+This guide will help you install the Gml.Backend server component on GNU/Linux systems.  
+The installation script will automatically configure all necessary components for you.
 
-## Предварительные требования
+## Prerequisites
 
-Перед началом установки убедитесь, что у вас есть:
+Before starting the installation, make sure you have:
 
-- Система GNU/Linux с системой инициализации systemd
-- Доступ к терминалу с правами администратора (sudo)
-- Интернет-соединение для загрузки установочных файлов
+- A GNU/Linux system with the systemd init system
+- Terminal access with administrative privileges (sudo)
+- An internet connection to download installation files
 
-### Официально протестированные дистрибутивы
+### Officially Tested Distributions
 
-Серверная часть должна работать на большинстве современных дистрибутивов GNU/Linux, но официальный скрипт установки, представленный здесь, ограничен в возможных дистрибутивах. Вот список официально протестированных дистрибутивов и их поддержка:
+The server component should work on most modern GNU/Linux distributions, but the official installation script provided here supports only certain distributions. Below is a list of officially tested distributions and their support status:
 
-- ✅ Полностью поддерживается
-- ⚠️ Должно работать, но не тестировалось
-- ❌ Не поддерживается, используйте [ручную установку](install-source)
+- ✅ Fully supported  
+- ⚠️ Should work, but not tested  
+- ❌ Not supported, use [manual installation](install-source)
 
-| Дистрибутив  | Версии |
-| ------------ | ------ |
-| `Ubuntu`     | 25 ✅ 24 ⚠️ 22 ⚠️ |
-| `Debian`     | 13 ✅ 12 ⚠️ |
-| `Fedora`     | 42 ✅ 41 ⚠️ |
-| `Rocky`      | 9  ✅  |
-| `Arch Linux` | ⚠️   |
-| `Alpine`     | ❌   |
+| Distribution  | Versions |
+| ------------- | -------- |
+| `Ubuntu`      | 25 ✅ 24 ⚠️ 22 ⚠️ |
+| `Debian`      | 13 ✅ 12 ⚠️ |
+| `Fedora`      | 42 ✅ 41 ⚠️ |
+| `Rocky`       | 9 ✅ |
+| `Arch Linux`  | ⚠️ |
+| `Alpine`      | ❌ |
 
-## Шаги установки
+## Installation Steps
 
-### Шаг 1: Загрузка установочного скрипта
+### Step 1: Download the Installation Script
 
-Откройте терминал и выполните следующую команду для загрузки установочного скрипта:
+Open a terminal and run the following command to download the installation script:
 
 ```bash
 curl -O https://raw.githubusercontent.com/Gml-Launcher/Gml.Backend.Installer/refs/heads/master/installer.sh
-```
+````
 
-Эта команда загружает установочный скрипт из репозитория GitHub.
+This command downloads the installation script from the GitHub repository.
 
-### Шаг 2: Сделайте скрипт исполняемым
+### Step 2: Make the Script Executable
 
-После загрузки скрипта вам нужно сделать его исполняемым, выполнив:
+After downloading the script, make it executable by running:
 
 ```bash
 chmod +x ./installer.sh
 ```
 
-Эта команда дает скрипту разрешение на запуск в вашей системе.
+This command grants the script permission to run on your system.
 
-### Шаг 3: Запустите установку
+### Step 3: Run the Installation
 
-Теперь вы можете начать установку, выполнив:
+Now you can start the installation by executing:
 
 ```bash
 ./installer.sh --version v2025.3.2
 ```
 
-Скрипт проведет вас через процесс установки с подсказками на русском языке. Следуйте инструкциям на экране для
-завершения настройки.
+The script will guide you through the installation process with prompts in Russian. Follow the on-screen instructions to complete the setup.
 
-## Устранение неполадок
+## Troubleshooting
 
-Если у вас возникли проблемы во время установки:
+If you encounter issues during installation:
 
-- Убедитесь, что у вас есть подключение к интернету
-- Проверьте, что у вас есть права администратора (при необходимости попробуйте запустить с sudo)
-- Проверьте правильность ввода команд
-- Если скрипт не удается загрузить, вы можете вручную загрузить его
-  из [репозитория GitHub](https://github.com/GamerVII-NET/Gml.Backend.Installer)
+* Make sure you have an active internet connection
+* Verify that you have administrative privileges (try running with sudo if necessary)
+* Check for correct command input
+* If the script fails to download, you can manually download it from the [GitHub repository](https://github.com/GamerVII-NET/Gml.Backend.Installer)
 
-## Дополнительная информация
+## Additional Information
 
-Для получения дополнительной информации или сообщения о проблемах посетите репозиторий
-GitHub: [Gml.Backend.Installer](https://github.com/GamerVII-NET/Gml.Backend.Installer)
+For more information or to report issues, visit the GitHub repository:
+[Gml.Backend.Installer](https://github.com/GamerVII-NET/Gml.Backend.Installer)
+
+```

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Установка
+# Installation
 
 import {DocsCardList} from "@site/src/components/DocsCard";
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -2,45 +2,37 @@
 sidebar_position: 3
 ---
 
-# Прочие системы
+# Other Systems
 
-Инструкции по установке и настройке серверной части проекта для прочих операционных систем, не имеющих установщика
+Instructions for installing and configuring the server component of the project on other operating systems that do not have an installer.
 
-## Клонирование репозитория
+## Cloning the Repository
 
-Выполните следующую команду в вашем терминале:
+Run the following command in your terminal:
 
 ```
-git clone --recursive -b v2025.3.2 https://github.com/GamerVII-NET/Gml.Backend.git
-```
 
-## Переход в директорию проекта
+git clone --recursive -b v2025.3.2 [https://github.com/GamerVII-NET/Gml.Backend.git](https://github.com/GamerVII-NET/Gml.Backend.git)
 
-Выполните следующую команду в вашем терминале:
+````
+
+## Navigate to the Project Directory
+
+Run the following command in your terminal:
 
 ```bash
 cd Gml.Backend
-```
+````
 
-#### Настройка config файла
+#### Config File Setup
 
-Отредактируйте или создайте файл `.env` в корне папки `Gml.Backend`
-
-:::info
-Обязательно замените SECURITY_KEY!
-
-Для его генерации можно воспользоваться следующей командой: 
-```bash
-openssl rand -hex 32
-```
-
-:::
+Edit or create a `.env` file in the root of the `Gml.Backend` folder.
 
 ```yaml
-# Пример уже настроенного .env
+# Example of a pre-configured .env
 
-# UID (User Identifier) и GID (Group Identifier) используется
-# для указания id пользователя и группы в Linux.
+# UID (User Identifier) and GID (Group Identifier) are used
+# to specify the user and group ID in Linux.
 UID=0
 GID=0
 
@@ -50,49 +42,49 @@ PROJECT_DESCRIPTION=
 PROJECT_POLICYNAME=GmlServerPolicy
 PROJECT_PATH=
 
-  # Включить подключение к S3
+# Enable S3 connection
 S3_ENABLED=true
-  # root пользователь панели управления
+# Admin user for the control panel
 MINIO_ROOT_USER=GamerVII
-  # root пароль панели управления
+# Admin password for the control panel
 MINIO_ROOT_PASSWORD=waefawegferyjerthdrthrtrdthdr
 
-  # Включить Swagger
+# Enable Swagger
 SWAGGER_ENABLED=true
 
-  # Настройки внешнего доступа
-  # Порты, на которых будут работать приложения
-  # адрес консоли (:5009 или 10.2.0.1:5009)
+# External access settings
+# Ports for applications
+# Console address (:5009 or 10.2.0.1:5009)
 MINIO_ADDRESS=:5009
-  # Порт консоли (совпадает с записью выше)
+# Console port (matches the address above)
 MINIO_ADDRESS_PORT=5009
-  # адрес панели (:5010 или 10.2.0.1:5010)
+# Panel address (:5010 or 10.2.0.1:5010)
 MINIO_CONSOLE_ADDRESS=:5010
-  # Порт (совпадает с записью выше)
+# Port (matches the address above)
 MINIO_CONSOLE_ADDRESS_PORT=5010
-  # Web Api
+# Web API
 PORT_GML_BACKEND=5000
-  # Панель управления проектом
+# Project management panel
 PORT_GML_FRONTEND=5003
-  # Файловый сервис
+# File service
 PORT_GML_FILES=5005
-  # Сервис скинов
+# Skins service
 PORT_GML_SKINS=5006
 
-  # Микросервисы:
+# Microservices:
 SERVICE_TEXTURE_ENDPOINT=http://gml-web-skins:8085
 MARKET_ENDPOINT=https://gml-market.recloud.tech
 ```
 
-#### Запуск проекта с использованием Docker
+#### Running the Project with Docker
 
-Выполните следующую команду в вашем терминале:
+Run the following command in your terminal:
 
 ```bash
 docker compose up -f ./docker-compose-prod.yml -d
 ```
 
-Пожалуйста, убедитесь, что Docker установлен и работает на вашем компьютере/сервере для выполнения этой команды.
+Please make sure Docker is installed and running on your computer/server to execute this command.
 
-После выполнения команды Docker загрузит необходимые образы и запустит проект.
-После запуска проекта, вы сможете открыть его в браузере, используя адрес `http://<ip_вашего_сервера>:5003`.
+After running the command, Docker will pull the required images and start the project.
+Once the project is running, you can access it in your browser using `http://<your_server_ip>:5003`.
